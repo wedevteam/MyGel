@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".fragments.AccediFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/text"
+            android:textAlignment="center"
+            android:layout_marginTop="16sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/attivazione3" />
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollablespace">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20sp"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1sp"
+                android:layout_marginBottom="10sp"
+                android:background="@color/black"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:backgroundTint="#d7dfe4"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:textAlignment="center"
+                android:text="\nScegli la rete internet \na cui si dovrà collegare il dispositivo, \n\ninserisci la password \n\ne premi il pulsante CONNETTI\n"
+                android:layout_marginBottom="20sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <RadioGroup
+                    android:id="@+id/radioGroup"
+                    android:checkedButton="@+id/radio_button_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <RadioButton
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:id="@+id/radio_button_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Rete 1"/>
+
+                    <RadioButton
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:visibility="gone"
+                        android:id="@+id/radio_button_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="CAT o installatore"/>
+                    <RadioButton
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:visibility="gone"
+                        android:id="@+id/radio_button_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Distributore"/>
+                    <RadioButton
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:visibility="gone"
+                        android:id="@+id/radio_button_4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Progettista"/>
+                </RadioGroup>
+
+
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_marginTop="20sp"
+                android:layout_marginBottom="20sp"
+                android:id="@+id/outlinedTextField4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/password"
+                android:textColorHint="#99000000"
+                app:boxStrokeColor="@color/button"
+                app:hintTextAppearance="@style/HintTextAppearance"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:id="@+id/password"
+                    android:inputType="textPassword"
+
+                    android:layout_height="wrap_content"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/accedi"
+                android:layout_width="match_parent"
+                android:layout_height="60sp"
+                android:layout_above="@+id/registratiskip"
+                android:layout_marginStart="20sp"
+                android:layout_marginTop="20sp"
+                android:layout_marginEnd="20sp"
+                android:layout_marginBottom="20sp"
+                android:backgroundTint="@color/button"
+                android:text="@string/connetti"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:cornerRadius="4sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                android:textColor="@color/black"
+                android:textAlignment="center"
+                android:text="Connessione in corso..."
+                android:layout_marginBottom="20sp"/>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

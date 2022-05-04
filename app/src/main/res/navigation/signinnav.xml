@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/signinnav"
+    app:startDestination="@id/accediFragment">
+
+    <fragment
+        android:id="@+id/accediFragment"
+        android:name="com.wedev.mygel.fragments.AccediFragment"
+        android:label="fragment_accedi"
+        tools:layout="@layout/fragment_accedi" >
+        <action
+            android:id="@+id/action_accediFragment_to_recuperaPasswordFragment"
+            app:destination="@id/recuperaPasswordFragment" />
+        <action
+            android:id="@+id/action_accediFragment_to_sceltaProfiloFragment"
+            app:destination="@id/sceltaProfiloFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recuperaPasswordFragment"
+        android:name="com.wedev.mygel.fragments.RecuperaPasswordFragment"
+        android:label="fragment_recupera_password"
+        tools:layout="@layout/fragment_recupera_password" />
+    <fragment
+        android:id="@+id/sceltaProfiloFragment"
+        android:name="com.wedev.mygel.fragments.SceltaProfiloFragment"
+        android:label="fragment_scelta_profilo"
+        tools:layout="@layout/fragment_scelta_profilo" >
+        <action
+            android:id="@+id/action_sceltaProfiloFragment_to_registraFragment"
+            app:destination="@id/registraFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registraFragment"
+        android:name="com.wedev.mygel.fragments.RegistraFragment"
+        android:label="fragment_registra"
+        tools:layout="@layout/fragment_registra" >
+        <action
+            android:id="@+id/action_registraFragment_to_registrazioneEffettuataFragment"
+            app:destination="@id/registrazioneEffettuataFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrazioneEffettuataFragment"
+        android:name="com.wedev.mygel.fragments.RegistrazioneEffettuataFragment"
+        android:label="fragment_registrazione_effettuata"
+        tools:layout="@layout/fragment_registrazione_effettuata" />
+</navigation>

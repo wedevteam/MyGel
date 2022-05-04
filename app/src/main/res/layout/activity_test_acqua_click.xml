@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TestAcquaClickActivity">
+
+    <TextView
+        android:id="@+id/tit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TEST ACQUACLICK"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/accedi"
+        android:layout_width="match_parent"
+        android:layout_height="60sp"
+        android:layout_marginStart="20sp"
+        android:layout_marginTop="20sp"
+        android:layout_marginEnd="20sp"
+        android:layout_marginBottom="20sp"
+        android:backgroundTint="@color/black"
+        android:text="pippo
+"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:cornerRadius="24sp" />
+
+    <Button
+        android:id="@+id/btnchiedi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tit"
+        android:layout_marginStart="20sp"
+        android:layout_marginTop="20sp"
+        android:background="@color/button"
+        android:enabled="true"
+        android:padding="8sp"
+        android:text="CHIEDI SSID LIST"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="INVIA PASSWORD e SSID"
+        android:layout_below="@+id/btnchiedi"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:background="@color/button"
+        android:textColor="@color/white"
+        android:layout_marginTop="20sp"
+        android:layout_marginStart="20sp"
+        android:padding="8sp"
+        android:id="@+id/btninvia"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DISCONNETTI"
+        android:layout_below="@+id/btninvia"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:background="@color/button"
+        android:textColor="@color/white"
+        android:layout_marginTop="20sp"
+        android:layout_marginStart="20sp"
+        android:padding="8sp"
+        android:id="@+id/btnout"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_below="@+id/btnout"
+        android:layout_margin="20sp"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/domanderisposte"
+                android:maxLines="100"
+                >
+
+            </TextView>
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

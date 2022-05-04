@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainnav"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.wedev.mygel.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_sceltaProdottoFragment"
+            app:destination="@id/sceltaProdottoFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_status1Fragment"
+            app:destination="@id/status1Fragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_comandiFragment"
+            app:destination="@id/comandiFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_messaggiFragment"
+            app:destination="@id/messaggiFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sceltaProdottoFragment"
+        android:name="com.wedev.mygel.SceltaProdottoFragment"
+        android:label="fragment_scelta_prodotto"
+        tools:layout="@layout/fragment_scelta_prodotto" >
+        <action
+            android:id="@+id/action_sceltaProdottoFragment_to_infoAttivazioneFragment"
+            app:destination="@id/infoAttivazioneFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/infoAttivazioneFragment"
+        android:name="com.wedev.mygel.InfoAttivazioneFragment"
+        android:label="fragment_info_attivazione"
+        tools:layout="@layout/fragment_info_attivazione" >
+        <action
+            android:id="@+id/action_infoAttivazioneFragment_to_attivazioneFragment"
+            app:destination="@id/attivazioneFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/attivazioneFragment"
+        android:name="com.wedev.mygel.AttivazioneFragment"
+        android:label="fragment_attivazione"
+        tools:layout="@layout/fragment_attivazione" >
+        <action
+            android:id="@+id/action_attivazioneFragment_to_risultatoAttivazioneFragment"
+            app:destination="@id/risultatoAttivazioneFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/risultatoAttivazioneFragment"
+        android:name="com.wedev.mygel.RisultatoAttivazioneFragment"
+        android:label="fragment_risultato_attivazione"
+        tools:layout="@layout/fragment_risultato_attivazione" >
+        <action
+            android:id="@+id/action_risultatoAttivazioneFragment_to_assegnazioneNomeFragment"
+            app:destination="@id/assegnazioneNomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/assegnazioneNomeFragment"
+        android:name="com.wedev.mygel.AssegnazioneNomeFragment"
+        android:label="fragment_assegnazione_nome"
+        tools:layout="@layout/fragment_assegnazione_nome" />
+    <fragment
+        android:id="@+id/status1Fragment"
+        android:name="com.wedev.mygel.Status1Fragment"
+        android:label="fragment_status1"
+        tools:layout="@layout/fragment_status1" >
+        <action
+            android:id="@+id/action_status1Fragment_to_status2Fragment"
+            app:destination="@id/status2Fragment" />
+        <action
+            android:id="@+id/action_status1Fragment_to_comandiFragment"
+            app:destination="@id/comandiFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/status2Fragment"
+        android:name="com.wedev.mygel.Status2Fragment"
+        android:label="fragment_status2"
+        tools:layout="@layout/fragment_status2" >
+        <action
+            android:id="@+id/action_status2Fragment_to_comandiFragment"
+            app:destination="@id/comandiFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/comandiFragment"
+        android:name="com.wedev.mygel.ComandiFragment"
+        android:label="fragment_comandi"
+        tools:layout="@layout/fragment_comandi" />
+    <fragment
+        android:id="@+id/messaggiFragment"
+        android:name="com.wedev.mygel.MessaggiFragment"
+        android:label="fragment_messaggi"
+        tools:layout="@layout/fragment_messaggi" />
+</navigation>
