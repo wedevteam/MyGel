@@ -292,6 +292,16 @@ public class RegistraFragment extends Fragment {
         p.setValue(password.getText().toString());
         params.add(p);
 
+        p = new RestParams();
+        p.setName("Source");
+        p.setValue("android");
+        params.add(p);
+
+        p = new RestParams();
+        p.setName("TipoProfilo");
+        p.setValue(getString(R.string.profprivato));
+        params.add(p);
+
 
         return params;
     }
