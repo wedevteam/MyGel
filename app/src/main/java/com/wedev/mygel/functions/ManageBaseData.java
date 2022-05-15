@@ -88,8 +88,8 @@ public class ManageBaseData {
         ArrayList<RestParams> params = new ArrayList<>();
 
         RestParams p = new RestParams();
-        p.setName(PARAMapp_token);
-        p.setValue(ctx.getString(R.string.APP_TOKEN));
+        p.setName("app_token");
+        p.setValue(ctx.getString(R.string.tokenapp));
         params.add(p);
 
         p = new RestParams();

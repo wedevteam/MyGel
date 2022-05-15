@@ -94,10 +94,9 @@
 
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/accedi"
+                android:id="@+id/scegli"
                 android:layout_width="match_parent"
                 android:layout_height="60sp"
-                android:layout_above="@+id/registratiskip"
                 android:layout_marginStart="20sp"
                 android:layout_marginTop="20sp"
                 android:layout_marginEnd="20sp"

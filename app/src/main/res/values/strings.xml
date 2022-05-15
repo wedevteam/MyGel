@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">My Gel</string>
 
-    <string name="APP_TOKEN">aLHRoQsWelGo2JzPYAOvlPna2FtBlu23C0JAEBVmMI2O1fvCKZD</string>
     <string name="salta">salta</string>
     <string name="stringawelcome1">Stringa 1</string>
     <string name="stringawelcome2">Stringa 2</string>
@@ -41,4 +40,16 @@
     <string name="registradisp">registra</string>
     <string name="status">Status</string>
     <string name="impostazioni">Vai ad impostazioni wi-fi</string>
+
+    <!-- REST/API ADDRESSES -->
+
+    <string name="tokenapp">E0D95E577325872E7A50305F532354A43EAEEF37ADAF2CC6FCF47ACB393CB848</string>
+    <string name="baseapi">https://my.gel.it/</string>
+    <string name="signin">api/auth/signin</string>
+    <string name="signup">api/auth/signup</string>
+
+
+    <!-- PROFILI -->
+    <string name="profprivato">privato</string>
+
 </resources>

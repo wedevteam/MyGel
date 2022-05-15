@@ -63,6 +63,7 @@
                     android:id="@+id/email"
                     android:textColor="@color/black"
                     android:inputType="textEmailAddress"
+                    android:text=""
                     android:layout_height="wrap_content"
                     />
 
@@ -83,6 +84,8 @@
                     android:layout_width="match_parent"
                     android:maxLines="1"
                     android:id="@+id/nome"
+
+                    android:text=""
                     android:textColor="@color/black"
                     android:inputType="textPersonName"
                     android:layout_height="wrap_content"
@@ -95,6 +98,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/Cognome"
+
                 android:textColorHint="#99000000"
                 app:boxStrokeColor="@color/button"
                 app:hintTextAppearance="@style/HintTextAppearance"
@@ -103,6 +107,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:maxLines="1"
+
+                    android:text=""
                     android:id="@+id/cognome"
                     android:textColor="@color/black"
                     android:inputType="textPersonName"
@@ -125,6 +131,8 @@
                     android:layout_width="match_parent"
                     android:maxLines="1"
                     android:id="@+id/indirizzo"
+
+                    android:text=""
                     android:textColor="@color/black"
                     android:inputType="text"
                     android:layout_height="wrap_content"
@@ -146,6 +154,8 @@
                     android:layout_width="match_parent"
                     android:maxLines="1"
                     android:id="@+id/citta"
+
+                    android:text=""
                     android:textColor="@color/black"
                     android:inputType="text"
                     android:layout_height="wrap_content"
@@ -169,6 +179,7 @@
                     android:maxLines="1"
                     android:textColor="@color/black"
                     android:id="@+id/password"
+                    android:text=""
                     android:inputType="textPassword"
 
                     android:layout_height="wrap_content"
@@ -179,7 +190,7 @@
 
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/accedi"
+                android:id="@+id/registra"
                 android:layout_width="match_parent"
                 android:layout_height="60sp"
                 android:layout_above="@+id/registratiskip"
