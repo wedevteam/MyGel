@@ -81,7 +81,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/aggiorna"
+                android:id="@+id/comandi"
                 android:layout_width="match_parent"
                 android:layout_height="60sp"
                 android:layout_marginStart="20sp"

@@ -2,6 +2,7 @@ package com.wedev.mygel;
 
 import static android.content.Context.INPUT_METHOD_SERVICE;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -135,13 +136,20 @@ public class HomeFragment extends Fragment {
 
     }
     private void setRecycler() {
-        prodottiAdapter = new ProdottiAdapter(view.getContext(), elencoProdotti);
+        prodottiAdapter = new ProdottiAdapter(view.getContext(), elencoProdotti,this);
         elencoProdottiRecycler.setLayoutManager(new LinearLayoutManager(view.getContext(),LinearLayoutManager.VERTICAL,false));
         elencoProdottiRecycler.setItemAnimator(new DefaultItemAnimator());
         elencoProdottiRecycler.setAdapter(prodottiAdapter);
     }
 
-
+    public void goStatus(String idProdotto, String nomeDevice){
+        SharedPreferences prefs = getContext().getSharedPreferences("gel", 0);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString("nomedevice", nomeDevice);
+        editor.putString("idProdotto", idProdotto);
+        editor.apply();
+        Navigation.findNavController(view).navigate(R.id.status1Fragment);
+    }
     // ------------ REST DATA -------------
     public void getDevices(){
 

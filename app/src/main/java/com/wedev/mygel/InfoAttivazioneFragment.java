@@ -102,7 +102,7 @@ public class InfoAttivazioneFragment extends Fragment {
                                    JSONObject dato = menu.getJSONObject(i);
                                    ssids.add(dato.getString("SSID"));
                                }
-                               SharedPreferences prefs = getContext().getSharedPreferences("ssids", 0);
+                               SharedPreferences prefs = getContext().getSharedPreferences("gel", 0);
                                SharedPreferences.Editor editor = prefs.edit();
                                editor.putString("nomedevice", nomeDevice);
                                editor.putInt("numerossid", ssids.size());

@@ -50,6 +50,7 @@
     <string name="forgot">api/auth/forgot</string>
     <string name="deviceslist">api/user/get-devices</string>
     <string name="joindevice">api/user/join-device</string>
+    <string name="sendcmd">api/user/send-cmd-device</string>
 
 
     <!-- PROFILI -->

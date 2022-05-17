@@ -352,7 +352,7 @@ public class AssegnazioneNomeFragment extends Fragment {
     }
     private void getListSSID() {
 
-            SharedPreferences prefs = getContext().getSharedPreferences("ssids", 0);
+            SharedPreferences prefs = getContext().getSharedPreferences("gel", 0);
             int size = prefs.getInt("numerossid" , 0);
             for(int i=0 ; i<size; i++){
                 ssids.add(prefs.getString("ssid" + "_ " + i, "")) ;
