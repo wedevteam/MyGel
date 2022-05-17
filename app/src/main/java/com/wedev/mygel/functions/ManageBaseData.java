@@ -37,7 +37,7 @@ public class ManageBaseData {
 
 
     // DEBUG
-    public boolean DEBUG = true; // mettere false in produzione
+    public boolean DEBUG = false; // mettere false in produzione
 
     // Costruttore
     public ManageBaseData(Context ctx) {

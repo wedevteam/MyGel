@@ -64,29 +64,32 @@
                     android:id="@+id/radio_button_1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Privato"/>
+                    android:text="@string/privato"/>
 
                 <RadioButton
-                    android:textColor="@color/black"
+                    android:textColor="@color/button"
                     android:textStyle="bold"
+                    android:enabled="false"
                     android:id="@+id/radio_button_2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="CAT o installatore"/>
+                    android:text="@string/cat_o_installatore"/>
                 <RadioButton
-                    android:textColor="@color/black"
+                    android:textColor="@color/button"
                     android:textStyle="bold"
+                    android:enabled="false"
                     android:id="@+id/radio_button_3"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Distributore"/>
+                    android:text="@string/distributore"/>
                 <RadioButton
-                    android:textColor="@color/black"
+                    android:textColor="@color/button"
                     android:textStyle="bold"
+                    android:enabled="false"
                     android:id="@+id/radio_button_4"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Progettista"/>
+                    android:text="@string/progettista"/>
             </RadioGroup>
 
 

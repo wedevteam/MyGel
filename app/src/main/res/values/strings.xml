@@ -47,9 +47,30 @@
     <string name="baseapi">https://my.gel.it/</string>
     <string name="signin">api/auth/signin</string>
     <string name="signup">api/auth/signup</string>
+    <string name="forgot">api/auth/forgot</string>
+    <string name="deviceslist">api/user/get-devices</string>
+    <string name="joindevice">api/user/join-device</string>
 
 
     <!-- PROFILI -->
     <string name="profprivato">privato</string>
+    <string name="progettista">Progettista</string>
+    <string name="distributore">Distributore</string>
+    <string name="cat_o_installatore">CAT o installatore</string>
+    <string name="privato">Privato</string>
+    <string name="registrazioneeffettuata">Registrazione effettuata</string>
+    <string name="assegnanomedevice">\nScegli la tua rete a cui si deve \nconnettere il dispositivo \ned inserisci la password di accesso \nalla tua reteinternet</string>
+    <string name="elencoreti">Elenco reti disponibili</string>
+    <string name="identifica_la_tua_rete_internet">Identifica la tua rete internet</string>
+    <string name="retescelta">NESSUNA RETE SCELTA</string>
+    <string name="associazioneeffettuata">La tua app è stata associata al prodotto selezionato. Non appena il tuo prodotto inizierà la comunicazione con il server potrai controllarlo da questa App.</string>
+    <string name="home">Home</string>
+    <string name="comandi">In questa sezione potrai inviare direttamente i comandi al tuo apparato indipendentemente da dove ti trovi</string>
+    <string name="aggiorna_firmware">Aggiorna firmware</string>
+    <string name="riavvio">riavvio</string>
+    <string name="disattiva_blocco_valvola">Disattiva blocco valvola</string>
+    <string name="attiva_blocco_valvola">Attiva blocco valvola</string>
+    <string name="comandi2">comandi</string>
+    <string name="grafici">grafici</string>
 
 </resources>

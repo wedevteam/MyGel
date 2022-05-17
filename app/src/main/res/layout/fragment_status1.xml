@@ -80,7 +80,30 @@
                     </RelativeLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
-
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/aggiorna"
+                android:layout_width="match_parent"
+                android:layout_height="60sp"
+                android:layout_marginStart="20sp"
+                android:layout_marginTop="20sp"
+                android:layout_marginEnd="20sp"
+                android:backgroundTint="@color/button"
+                android:text="@string/comandi2"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:cornerRadius="4sp" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/home"
+                android:layout_width="match_parent"
+                android:layout_height="60sp"
+                android:layout_marginStart="20sp"
+                android:layout_marginEnd="20sp"
+                android:layout_marginBottom="20sp"
+                android:backgroundTint="@color/black"
+                android:text="@string/grafici"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:cornerRadius="4sp" />
 
         </LinearLayout>
     </ScrollView>

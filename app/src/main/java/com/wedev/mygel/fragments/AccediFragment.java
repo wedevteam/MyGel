@@ -28,6 +28,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textfield.TextInputEditText;
 import com.wedev.mygel.R;
 import com.wedev.mygel.SignInActivity;
@@ -64,6 +65,8 @@ public class AccediFragment extends Fragment {
     // Rest
     RestFunctions rf;
 
+    boolean DEBUG = false;
+
 
     public AccediFragment() {
         // Required empty public constructor
@@ -83,6 +86,17 @@ public class AccediFragment extends Fragment {
         // Legge DB
         mainData = getMainData();
 
+        if (DEBUG){
+            db.tMainDao().deleteAll();
+        }else{
+            if (mainData!=null){
+                SignInActivity signin = (SignInActivity)getActivity();
+                assert signin != null;
+                signin.goMain();
+            }
+        }
+
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_accedi, container, false);
     }
@@ -100,7 +114,6 @@ public class AccediFragment extends Fragment {
         this.view = view;
         setUI();
         rf = new RestFunctions();
-
     }
     private void setUI() {
         registrati = view.findViewById(R.id.registrati);
@@ -142,22 +155,13 @@ public class AccediFragment extends Fragment {
     // ------------ REST DATA -------------
     public void accediServer(){
 
-        // TODO FASE PRELIMINARE DA ELIMINARE
-        db.tMainDao().deleteAll();
-        mainData = new TMain();
-        mainData.setToken("tokenFromWeb");
-        db.tMainDao().insert(mainData);
-
-        SignInActivity signin = (SignInActivity)getActivity();
-        assert signin != null;
-        signin.goMain();
         // =============================
         // Imposta parametri di input
-        /*ArrayList<RestParams> params=setParams();
+        ArrayList<RestParams> params=setParams();
         // Imposta richiesta
         JsonObjectRequest stringRequest = new JsonObjectRequest(
                 Request.Method.POST,
-                getString(R.string.addressbase)+getString(R.string.restsignin),
+                getString(R.string.baseapi)+getString(R.string.signin),
                 null,
                 new Response.Listener<JSONObject>() {
                     @Override
@@ -197,25 +201,23 @@ public class AccediFragment extends Fragment {
 
         // Richiesta
         stringRequest.setRetryPolicy(policy);
-        requestQueue.add(stringRequest);*/
+        requestQueue.add(stringRequest);
     }
 
 
     private void fillData(JSONObject s) {
         // TODO
-        /*try {
-            JSONObject response = s.getJSONObject("response");
-            boolean success = response.getBoolean("success");
+        try {
+            boolean success = s.getBoolean("success");
             if (!success){
-                showError(response.getString("error_code"),response.getString("message"));
+                showError(s.getString("error_code"),s.getString("message"));
             }else{
-                String tokenFromWeb = response.getString("token");
+                String tokenFromWeb = s.getString("token");
                 if (!tokenFromWeb.equals("null") && !tokenFromWeb.isEmpty()){
                     db.tMainDao().deleteAll();
                     mainData = new TMain();
                     mainData.setToken(tokenFromWeb);
-                    JSONObject data = response.getJSONObject("data");
-                    JSONObject user = data.getJSONObject("user");
+                    mainData.setIdServer("1");
                     db.tMainDao().insert(mainData);
                 }
                 SignInActivity signin = (SignInActivity)getActivity();
@@ -224,41 +226,54 @@ public class AccediFragment extends Fragment {
         } catch (JSONException e) {
             e.printStackTrace();
             // TODO
-        }*/
+        }
         // setStart(s);
         //5
     }
     private void showError(String error_code, String message) {
-        /*hideSoftKeyBoard();
-        new errbase(getContext()).showErrBase(" "+error_code,message);*/
+        hideSoftKeyBoard();
+        showErrBase(" "+error_code,message);
     }
+
+    public void showErrBase(String titolo, String messaggio){
+        MaterialAlertDialogBuilder dialogo=  new MaterialAlertDialogBuilder(getContext(),R.style.AlertDialogTheme)
+                .setTitle(titolo)
+                .setMessage(messaggio)
+                .setNeutralButton("Ok",null);
+        dialogo.show();
+    }
+
     private void hideSoftKeyBoard() {
-        /*InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(INPUT_METHOD_SERVICE);
+        InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(INPUT_METHOD_SERVICE);
 
         if(imm.isAcceptingText()) { // verify if the soft keyboard is open
             imm.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), 0);
-        }*/
+        }
     }
-    /*private ArrayList<RestParams> setParams() {
+    private ArrayList<RestParams> setParams() {
         ArrayList<RestParams> params = new ArrayList<>();
 
         RestParams p = new RestParams();
-        p.setName(PARAMapp_token);
-        p.setValue(getString(R.string.APP_TOKEN));
+        p.setName("app_token");
+        p.setValue(getString(R.string.tokenapp));
         params.add(p);
 
         p = new RestParams();
-        p.setName("email");
+        p.setName("Email");
         p.setValue(email.getText().toString());
         params.add(p);
 
 
         p = new RestParams();
-        p.setName("password");
+        p.setName("Password");
         p.setValue(password.getText().toString());
         params.add(p);
 
+        p = new RestParams();
+        p.setName("Source");
+        p.setValue("android");
+        params.add(p);
 
         return params;
-    }*/
+    }
 }

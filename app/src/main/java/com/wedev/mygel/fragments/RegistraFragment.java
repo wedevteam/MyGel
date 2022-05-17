@@ -2,6 +2,7 @@ package com.wedev.mygel.fragments;
 
 import static android.content.Context.INPUT_METHOD_SERVICE;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -109,11 +110,21 @@ public class RegistraFragment extends Fragment {
         registra.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                registraServer();
+                if (verify())
+                    registraServer();
             }
         });
     }
     private boolean verify() {
+        if (!emailIsValid()){
+            email.requestFocus();
+            return false;
+        }
+        if (email.getText().toString().isEmpty()){
+            email.requestFocus();
+            return false;
+        }
+
         if (nome.getText().toString().isEmpty()){
             nome.requestFocus();
             return false;
@@ -130,14 +141,7 @@ public class RegistraFragment extends Fragment {
             indirizzo.requestFocus();
             return false;
         }
-        if (email.getText().toString().isEmpty()){
-            email.requestFocus();
-            return false;
-        }
-        if (!emailIsValid()){
-            email.requestFocus();
-            return false;
-        }
+
         if (password.getText().toString().isEmpty()){
             password.requestFocus();
             return false;
@@ -175,6 +179,7 @@ public class RegistraFragment extends Fragment {
                             String t="v";
                             registra.setEnabled(true);
                         } else {
+                            registra.setEnabled(false);
                             fillData(s);
                         }
                     }
@@ -212,22 +217,22 @@ public class RegistraFragment extends Fragment {
 
     private void fillData(JSONObject s) {
         try {
-            JSONObject response = s.getJSONObject("response");
-            boolean success = response.getBoolean("success");
+            //JSONObject response = s.getJSONObject("response");
+            boolean success = s.getBoolean("success");
             if (!success){
-                showError(response.getString("error_code"),response.getString("message"));
+                registra.setEnabled(true);
+                showError(s.getString("error_code"),s.getString("message"));
             }else{
-                String tokenFromWeb = response.getString("token");
+                String tokenFromWeb = s.getString("token");
                 if (!tokenFromWeb.equals("null") && !tokenFromWeb.isEmpty()){
                     mainData = new TMain();
                     mainData.setToken(tokenFromWeb);
-                    JSONObject data = response.getJSONObject("data");
-                    JSONObject user = data.getJSONObject("user");
                     db.tMainDao().insert(mainData);
                 }
                 Navigation.findNavController(view).navigate(R.id.registrazioneEffettuataFragment);
             }
         } catch (JSONException e) {
+            registra.setEnabled(true);
             e.printStackTrace();
             // TODO
         }
@@ -239,7 +244,7 @@ public class RegistraFragment extends Fragment {
     }
 
     public void showErrBase(String titolo, String messaggio){
-        MaterialAlertDialogBuilder dialogo=  new MaterialAlertDialogBuilder(getContext())
+        MaterialAlertDialogBuilder dialogo=  new MaterialAlertDialogBuilder(getContext(),R.style.AlertDialogTheme)
                 .setTitle(titolo)
                 .setMessage(messaggio)
                 .setNeutralButton("Ok",null);

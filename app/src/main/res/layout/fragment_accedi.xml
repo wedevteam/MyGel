@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:theme="@style/Theme.MyGel"
     android:orientation="vertical"
     tools:context=".fragments.AccediFragment">
 
@@ -47,6 +48,7 @@
                     android:layout_width="match_parent"
                     android:maxLines="1"
                     android:id="@+id/email"
+                    android:text=""
                     android:textColor="@color/black"
                     android:inputType="textEmailAddress"
                     android:layout_height="wrap_content"
@@ -73,7 +75,7 @@
                     android:textColor="@color/black"
                     android:id="@+id/password"
                     android:inputType="textPassword"
-
+                    android:text=""
                     android:layout_height="wrap_content"
                     />
 

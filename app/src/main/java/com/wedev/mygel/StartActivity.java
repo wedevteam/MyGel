@@ -36,11 +36,13 @@ public class StartActivity extends AppCompatActivity {
             }
 
         }else
-            getServerData();
+            goMain();
     }
     // Legge dati da Server
-    private void getServerData() {
-
+    private void goMain() {
+        Intent intent = new Intent(StartActivity.this,MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     // Set firsttimedata e va a welcome

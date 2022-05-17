@@ -5,18 +5,83 @@
         <item name="colorPrimary">#d7dfe4</item>
         <item name="colorPrimaryVariant">#5b6871</item>
         <item name="colorOnPrimary">@color/black</item>
+        <item name="textFillColor">#f2f2f2</item>
 
 
+        <item name="android:textColorHint">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
-        <item name="android:background">@color/white</item>
+        <item name="android:background">#f2f2f2</item>
         <item name="android:text">@color/black</item>
+
+
+        <item name="colorPrimaryInverse">#000000</item>
+        <item name="colorPrimaryContainer">#000000</item>
+        <item name="colorOnPrimaryContainer">#000000</item>
+        <item name="colorSecondaryContainer">#000000</item>
+        <item name="colorOnSecondaryContainer">#000000</item>
+        <item name="colorTertiary">#000000</item>
+        <item name="colorOnTertiary">#000000</item>
+        <item name="colorTertiaryContainer">#000000</item>
+        <item name="colorOnTertiaryContainer">#000000</item>
+        <item name="colorSurfaceVariant">#000000</item>
+        <item name="colorOnSurfaceVariant">#000000</item>
+        <item name="colorSurfaceInverse">#000000</item>
+        <item name="colorOnSurfaceInverse">#000000</item>
+        <item name="colorOutline">#000000</item>
+        <item name="colorErrorContainer">#000000</item>
+        <item name="colorOnErrorContainer">#000000</item>
+        <item name="textAppearanceDisplayLarge">@style/TextAppearance.Material3.DisplayLarge</item>
+        <item name="textAppearanceDisplayMedium">@style/TextAppearance.Material3.DisplayMedium</item>
+        <item name="textAppearanceDisplaySmall">@style/TextAppearance.Material3.DisplaySmall</item>
+        <item name="textAppearanceHeadlineLarge">@style/TextAppearance.Material3.HeadlineLarge</item>
+        <item name="textAppearanceHeadlineMedium">@style/TextAppearance.Material3.HeadlineMedium</item>
+        <item name="textAppearanceHeadlineSmall">@style/TextAppearance.Material3.HeadlineSmall</item>
+        <item name="textAppearanceTitleLarge">@style/TextAppearance.Material3.TitleLarge</item>
+        <item name="textAppearanceTitleMedium">@style/TextAppearance.Material3.TitleMedium</item>
+        <item name="textAppearanceTitleSmall">@style/TextAppearance.Material3.TitleSmall</item>
+        <item name="textAppearanceBodyLarge">@style/TextAppearance.Material3.BodyLarge</item>
+        <item name="textAppearanceBodyMedium">@style/TextAppearance.Material3.BodyMedium</item>
+        <item name="textAppearanceBodySmall">@style/TextAppearance.Material3.BodySmall</item>
+        <item name="textAppearanceLabelLarge">@style/TextAppearance.Material3.LabelLarge</item>
+        <item name="textAppearanceLabelMedium">@style/TextAppearance.Material3.LabelMedium</item>
+        <item name="textAppearanceLabelSmall">@style/TextAppearance.Material3.LabelSmall</item>
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.Material3.SmallComponent</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.Material3.MediumComponent</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.Material3.LargeComponent</item>
     </style>
 
+    <style name="Widget.App.TextInputLayout" parent="Widget.Design.TextInputLayout">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.TextInputLayout</item>
+        <item name="hintTextColor">@color/button</item>
+        <item name="android:textColorHint">@color/button</item>
+    </style>
+    <style name="ThemeOverlay.App.TextInputLayout" parent="">
+        <item name="colorControlNormal">@color/black</item>
+    </style>
     <style name="HintTextAppearance" parent="TextAppearance.AppCompat">
-        <item name="android:textColor">@color/button</item>
+        <item name="android:textColor">#000000</item>
         <item name="android:textSize">12sp</item>
         <item name="android:textStyle">bold|italic</item>
+    </style>
+    <style name="AlertDialogTheme" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:backgroundTint">#000000</item>
+        <item name="android:fillColor">#000000</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="TextAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold|italic</item>
+    </style>
+    <style name="TitleTextStyle" parent="MaterialAlertDialog.MaterialComponents.Title.Text">
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">20sp</item>
     </style>
 </resources>
