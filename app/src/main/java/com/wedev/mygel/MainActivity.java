@@ -34,14 +34,14 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setWM();
+        /*setWM();
         String gomsg = getIntent().getStringExtra("type");
         if (gomsg!=null){
             if (gomsg.equals("gomsg")){
-              /*  navController = Navigation.findNavController(this,R.id.fragmentnav);
-                navController.navigate(R.id.listaMessaggiFragment,null);*/
+              *//*  navController = Navigation.findNavController(this,R.id.fragmentnav);
+                navController.navigate(R.id.listaMessaggiFragment,null);*//*
             }
-        }
+        }*/
     }
     public void setWM() {
         WorkManager mWorkManager = WorkManager.getInstance();

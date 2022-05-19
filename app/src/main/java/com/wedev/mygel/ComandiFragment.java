@@ -138,7 +138,7 @@ public class ComandiFragment extends Fragment {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.homeFragment);
+                Navigation.findNavController(view).navigate(R.id.status1Fragment);
             }
         });
     }

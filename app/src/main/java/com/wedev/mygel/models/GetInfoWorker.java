@@ -22,6 +22,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.wedev.mygel.MainActivity;
+import com.wedev.mygel.R;
 import com.wedev.mygel.database.DB;
 import com.wedev.mygel.database.tables.TMain;
 
@@ -112,7 +113,7 @@ public class GetInfoWorker extends Worker {
             public Map<String, String> getHeaders() {
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("Content-Type", "application/json");
-                params.put("Token", main.getToken());
+                //params.put("Token", main.getToken());
                 return params;
             }
 
@@ -132,7 +133,7 @@ public class GetInfoWorker extends Worker {
     public Map<String, String> setParams(String address) {
         params = new HashMap<>();
 
-        params.put("Token",main.getToken() );
+      //  params.put("Token",main.getToken() );
 
         return params;
     }

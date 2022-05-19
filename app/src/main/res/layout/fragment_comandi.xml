@@ -91,7 +91,7 @@
                 android:layout_marginEnd="20sp"
                 android:layout_marginBottom="20sp"
                 android:backgroundTint="@color/black"
-                android:text="@string/home"
+                android:text="@string/torna_a_status"
                 android:textColor="@color/white"
                 android:textSize="14sp"
                 app:cornerRadius="4sp" />

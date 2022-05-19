@@ -93,7 +93,7 @@
                 android:textSize="14sp"
                 app:cornerRadius="4sp" />
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/home"
+                android:id="@+id/grafici"
                 android:layout_width="match_parent"
                 android:layout_height="60sp"
                 android:layout_marginStart="20sp"

@@ -1,5 +1,6 @@
 package com.wedev.mygel;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -16,6 +17,7 @@ public class Status1Fragment extends Fragment {
 
 
     Button comandi;
+    Button grafici;
     public Status1Fragment() {
         // Required empty public constructor
     }
@@ -40,6 +42,14 @@ public class Status1Fragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Navigation.findNavController(view).navigate(R.id.comandiFragment);
+            }
+        });
+        grafici = view.findViewById(R.id.grafici);
+        grafici.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(),GraficiActivity.class);
+                startActivity(intent);
             }
         });
     }

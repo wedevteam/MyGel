@@ -39,6 +39,7 @@ dependencies {
     // Rooms
     implementation 'androidx.room:room-runtime:2.4.2'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.fragment:fragment:1.4.1'
     annotationProcessor 'androidx.room:room-compiler:2.4.2'
 
     // Navigation
@@ -75,4 +76,5 @@ dependencies {
 
     // work manager
     implementation 'androidx.work:work-runtime:2.7.0'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 }
