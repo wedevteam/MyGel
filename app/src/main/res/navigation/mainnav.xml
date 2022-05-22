@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_homeFragment_to_messaggiFragment"
             app:destination="@id/messaggiFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_profiloFragment"
+            app:destination="@id/profiloFragment" />
     </fragment>
     <fragment
         android:id="@+id/sceltaProdottoFragment"
@@ -95,4 +98,9 @@
         android:name="com.wedev.mygel.MessaggiFragment"
         android:label="fragment_messaggi"
         tools:layout="@layout/fragment_messaggi" />
+    <fragment
+        android:id="@+id/profiloFragment"
+        android:name="com.wedev.mygel.ProfiloFragment"
+        android:label="fragment_profilo"
+        tools:layout="@layout/fragment_profilo" />
 </navigation>

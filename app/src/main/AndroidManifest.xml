@@ -16,6 +16,9 @@
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup">
         <activity
+            android:name=".MessaggiActivity"
+            android:exported="false" />
+        <activity
             android:name=".GraficiBase"
             android:exported="false" />
         <activity
@@ -62,6 +65,7 @@
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" /> <!-- Broadasting -->
+
         <receiver android:name=".functions.MessaggiBroadcast" />
 
         <service

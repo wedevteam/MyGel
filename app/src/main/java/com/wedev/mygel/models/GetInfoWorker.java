@@ -1,14 +1,21 @@
 package com.wedev.mygel.models;
 
+import static android.content.Context.INPUT_METHOD_SERVICE;
+
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
+import android.util.Log;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 
 import androidx.annotation.NonNull;
 import androidx.core.app.NotificationCompat;
+import androidx.navigation.Navigation;
 import androidx.work.Data;
 import androidx.work.Worker;
 import androidx.work.WorkerParameters;
@@ -21,40 +28,58 @@ import com.android.volley.RetryPolicy;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.wedev.mygel.MainActivity;
 import com.wedev.mygel.R;
 import com.wedev.mygel.database.DB;
 import com.wedev.mygel.database.tables.TMain;
+import com.wedev.mygel.functions.RestFunctions;
+import com.wedev.mygel.functions.RestParams;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class GetInfoWorker extends Worker {
+
+    //DB
+    TMain mainData;
+    DB db;
+
+    // Rest
+    RestFunctions rf;
+
     private static final String WORK_RESULT = "work_result";
     Context ctx;
     String taskDataString = "";
     Map<String, String> params;
-    //DB
-    TMain mainData;
-    DB db;
+
 
     public GetInfoWorker(
             @NonNull Context context,
             @NonNull WorkerParameters params) {
         super(context, params);
+        // Rest
+        rf = new RestFunctions();
         ctx = context;
     }
+
+
     @NonNull
     @Override
     public Result doWork() {
+
+        Log.d("dati: ","xx");
         Data taskData = getInputData();
         taskDataString = taskData.getString(MainActivity.MESSAGE_STATUS);
         setDB();
         mainData = getMainData();
-        getServerData(ctx, ctx.getString(R.string.GetNewMessage));
+        getServerData();
 
         Data outputData = new Data.Builder().putString(WORK_RESULT, "Jobs Finished").build();
         return Result.success(outputData);
@@ -81,21 +106,46 @@ public class GetInfoWorker extends Worker {
         manager.notify(1, builder.build());
     }
 
-    public void getServerData(final Context context, final String address) {
-        JsonObjectRequest stringRequest = new JsonObjectRequest(Request.Method.POST, address, null,
+    public Map<String, String> setParams(String address) {
+        params = new HashMap<>();
+
+      //  params.put("Token",main.getToken() );
+
+        return params;
+    }
+    public void getServerData(){
+        Log.d("dati: ","xx");
+        // =============================
+        // Imposta parametri di input
+        ArrayList<RestParams> params=setParams();
+        // Imposta richiesta
+        JsonObjectRequest stringRequest = new JsonObjectRequest(
+                Request.Method.POST,
+                ctx.getString(R.string.baseapi)+ctx.getString(R.string.scheduledalert),
+                null,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject s) {
                         if (s == null) {
-
+                            String t="v";
+                            // TODO
                         } else {
                             try {
-                                if (s.getInt("Codice")==0){
+                                setShared(s);
+                                try{
+                                    JSONObject alrm = s.getJSONObject("user_alarm");
+                                    showNotification("My Gel", taskDataString != null ? taskDataString : alrm.getString("TipoAlarm ")
+                                            +"\n"+alrm.getString("Descrizione"));
+                                }catch (Exception e){
+                                    showNotification("My Gel", taskDataString != null ? taskDataString : "Hai nuovi messaggi da leggere");
+                                }
+
+                                /*if (s.getInt("Codice")==0){
                                     JSONArray s2 = s.getJSONArray("Data");
                                     if (s2.length()>0){
                                         showNotification("Telesan", taskDataString != null ? taskDataString : "Hai nuovi messaggi da leggere");
                                     }
-                                }
+                                }*/
                             } catch (Exception e) {
 
                             }
@@ -105,7 +155,8 @@ public class GetInfoWorker extends Worker {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError volleyError) {
-
+                        String t="v";
+                        // TODO
                     }
                 }) {
 
@@ -113,10 +164,12 @@ public class GetInfoWorker extends Worker {
             public Map<String, String> getHeaders() {
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("Content-Type", "application/json");
-                //params.put("Token", main.getToken());
                 return params;
             }
-
+            @Override
+            public byte[] getBody() {
+                return rf.setJsonBody(params).toString() == null ? null : rf.setJsonBody(params).toString().getBytes(StandardCharsets.UTF_8);
+            }
         };
 
         //Creating a Request Queue
@@ -129,17 +182,41 @@ public class GetInfoWorker extends Worker {
         requestQueue.add(stringRequest);
     }
 
+    public void setShared(JSONObject s){
+        try{
+            JSONObject alrm = s.getJSONObject("user_alarm");
+            SharedPreferences prefs = ctx.getSharedPreferences("gel", 0);
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.putString("Descrizione ", alrm.getString("Descrizione "));
+            editor.putString("TipoAlarm ", alrm.getString("TipoAlarm  "));
+            editor.apply();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
-    public Map<String, String> setParams(String address) {
-        params = new HashMap<>();
+    }
+    private ArrayList<RestParams> setParams() {
+        ArrayList<RestParams> params = new ArrayList<>();
 
-      //  params.put("Token",main.getToken() );
+        RestParams p = new RestParams();
+        p.setName("app_token");
+        p.setValue(ctx.getString(R.string.tokenapp));
+        params.add(p);
+
+        p = new RestParams();
+        p.setName("Token");
+        p.setValue(mainData.getToken());
+        params.add(p);
+
+
+        p = new RestParams();
+        p.setName("Source");
+        p.setValue("android");
+        params.add(p);
 
         return params;
     }
-    /*************************************
-     * DB
-     ************************************/
+
     // ------------ DB -------------
     public void setDB() {
         db = DB.getInstance(ctx);

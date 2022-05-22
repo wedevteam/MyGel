@@ -2,13 +2,71 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <ImageView
+        android:layout_width="200sp"
+        android:layout_height="150sp"
+        android:src="@drawable/brand"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="2sp">
+    </ImageView>
 
     <com.github.mikephil.charting.charts.BarChart
         android:id="@+id/chart1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/seekBar1" />
+        android:layout_height="250sp"
+        android:layout_above="@+id/seekBar1"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10sp" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/titolo"
+        android:orientation="vertical">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/t4"
+            android:text="giorni utilizzo filtro a carbone"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/t5"
+            android:text="giorni utilizzo membrana"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/t6"
+            android:text="numero carboni usati"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/t7"
+            android:text="volume h2o carbone"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/t8"
+            android:text="volume h2o membrana"
+            />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/titolo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/chart1"
+        android:text=""
+        android:textAllCaps="true"
+        android:textAlignment="center"
+        android:textColor="#FF001f"
+        android:textSize="20sp" />
     <SeekBar
         android:id="@+id/seekBar2"
         android:layout_width="match_parent"
@@ -19,9 +77,11 @@
         android:layout_toLeftOf="@+id/tvYMax"
         android:layout_marginRight="5dp"
         android:max="200"
+        android:visibility="gone"
         android:paddingBottom="12dp" />
 
     <SeekBar
+        android:visibility="gone"
         android:id="@+id/seekBar1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

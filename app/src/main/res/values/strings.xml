@@ -52,7 +52,9 @@
     <string name="joindevice">api/user/join-device</string>
     <string name="sendcmd">api/user/send-cmd-device</string>
 
-    <string name="GetNewMessage">http://restapi.cloudlift.it/api/amministratori/GetNewMessage</string>
+    <string name="scheduledalert">api/user/get-alerts</string>
+    <string name="getstatus">api/user/get-status</string>
+    <string name="getgrafici">api/user/get-grafici</string>
 
     <!-- PROFILI -->
     <string name="profprivato">privato</string>
@@ -75,5 +77,14 @@
     <string name="comandi2">comandi</string>
     <string name="grafici">grafici</string>
     <string name="torna_a_status">Torna a status</string>
+    <string name="f0">° Pulizia su cambio cartuccia</string>
+    <string name="f1">° Blocco H2O utente</string>
+    <string name="f2">° Allarme allagamento</string>
+    <string name="f3">° Allarme no H2O</string>
+    <string name="f4">° preallarme sostituzione membrana</string>
+    <string name="f5">° preallarme sostituzione carbone</string>
+    <string name="f6">° allarme sost. membrana + carbone</string>
+    <string name="f7">° allarme sostituzione cartuccia</string>
+    <string name="f8">° stato LED ultravioletti</string>
 
 </resources>
