@@ -1,7 +1,8 @@
 plugins {
     id 'com.android.application'
 }
-
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
 android {
     compileSdk 31
 
@@ -9,8 +10,8 @@ android {
         applicationId "com.wedev.mygel"
         minSdk 24
         targetSdk 31
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "1.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -34,7 +35,7 @@ dependencies {
     // material
     implementation 'com.google.android.material:material:1.6.0'
     
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 
     // Rooms
     implementation 'androidx.room:room-runtime:2.4.2'
@@ -43,17 +44,17 @@ dependencies {
     annotationProcessor 'androidx.room:room-compiler:2.4.2'
 
     // Navigation
-    implementation 'androidx.navigation:navigation-fragment:2.4.1'
-    implementation 'androidx.navigation:navigation-ui:2.4.1'
+    implementation 'androidx.navigation:navigation-fragment:2.4.2'
+    implementation 'androidx.navigation:navigation-ui:2.4.2'
 
     // Navigation: Feature module Support
-    implementation 'androidx.navigation:navigation-dynamic-features-fragment:2.4.1'
+    implementation 'androidx.navigation:navigation-dynamic-features-fragment:2.4.2'
 
     // Navigation: Testing Navigation
-    androidTestImplementation 'androidx.navigation:navigation-testing:2.4.1'
+    androidTestImplementation 'androidx.navigation:navigation-testing:2.4.2'
 
     // Navigation: Jetpack Compose Integration
-    implementation 'androidx.navigation:navigation-compose:2.5.0-alpha03'
+    implementation 'androidx.navigation:navigation-compose:2.5.0-rc01'
 
     // Glide
     implementation 'com.github.bumptech.glide:glide:4.12.0'
@@ -77,4 +78,10 @@ dependencies {
     // work manager
     implementation 'androidx.work:work-runtime:2.7.1'
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+    // firebase
+    implementation platform('com.google.firebase:firebase-bom:30.0.1')
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-messaging:23.0.5'
+    implementation 'com.google.firebase:firebase-core:21.0.0'
 }

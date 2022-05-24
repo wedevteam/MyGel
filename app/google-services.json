@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "650825526364",
+    "project_id": "mygel-f3026",
+    "storage_bucket": "mygel-f3026.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:650825526364:android:3b3fc195a714bb4e71ca99",
+        "android_client_info": {
+          "package_name": "com.wedev.mygel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "650825526364-mn0jcvvla9092g87of8aqlf90peinjll.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZSdxtIHJCiavnJJFsLrMGscuaUgNKSSY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "650825526364-mn0jcvvla9092g87of8aqlf90peinjll.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

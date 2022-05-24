@@ -1,5 +1,6 @@
 package com.wedev.mygel;
 
+import static android.content.ContentValues.TAG;
 import static android.content.Context.INPUT_METHOD_SERVICE;
 
 import android.content.SharedPreferences;
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,9 +37,12 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.wedev.mygel.adapters.ProdottiAdapter;
 import com.wedev.mygel.adapters.SSIDSAdapter;
 import com.wedev.mygel.database.DB;
@@ -120,9 +125,11 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         this.view=view;
+
         setUI();
         getDevices();
     }
+
     private void setUI() {
         aggiungi = view.findViewById(R.id.aggiungi);
         aggiungi.setOnClickListener(new View.OnClickListener() {
@@ -227,6 +234,7 @@ public class HomeFragment extends Fragment {
                             prodotto.setNome(oggettoProdotto.getString("nome"));
                             prodotto.setSerialNumber(oggettoProdotto.getString("serialNumber"));
                             elencoProdotti.add(prodotto);
+                            setMessageType(prodotto.getSerialNumber());
                         }
                         setRecycler();
                     }
@@ -241,6 +249,21 @@ public class HomeFragment extends Fragment {
         }
         // setStart(s);
         //5
+    }
+    public void setMessageType(String prod) {
+        String msg ="";
+        FirebaseMessaging.getInstance().subscribeToTopic(prod)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        String msg = ("OK");
+                        if (!task.isSuccessful()) {
+                            msg = "NO";
+                        }
+                        Log.d(TAG, msg);
+
+                    }
+                });
     }
     private void showError(String error_code, String message) {
         hideSoftKeyBoard();

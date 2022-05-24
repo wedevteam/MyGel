@@ -86,5 +86,8 @@
     <string name="f6">° allarme sost. membrana + carbone</string>
     <string name="f7">° allarme sostituzione cartuccia</string>
     <string name="f8">° stato LED ultravioletti</string>
+    <string name="default_notification_channel_id">gelmessage</string>
+    <string name="allarmi">ALLARME</string>
+    <string name="tornaindietro">Esci</string>
 
 </resources>
