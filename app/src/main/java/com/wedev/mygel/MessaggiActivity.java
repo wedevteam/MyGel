@@ -136,12 +136,14 @@ public class MessaggiActivity extends AppCompatActivity {
         if (s.equals("LOCK:ON") ||s.equals("LOCK:OFF") ||s.equals("REBOOT")){
             comando= "#COMM#SERVER#1865#";
             comando += titolo;
+            comando += "#";
             comando += s;
             comando += "#";
         }
         if (s.equals("UPDATEFW") ){
             comando= "#COMM#SERVER#1865#";
             comando += titolo;
+            comando += "#";
             comando += s;
             comando += ":\"https://server.com/fw-latest.bin\";MD5HASH:eef279d38586b29c37e1fc37971bb972#";
         }

@@ -79,6 +79,7 @@ public class HomeFragment extends Fragment {
     ManageBaseData _baseData ;
 
     Button aggiungi;
+    Button aggiungi2;
 
     ProdottiAdapter prodottiAdapter;
     private RecyclerView elencoProdottiRecycler;
@@ -132,7 +133,14 @@ public class HomeFragment extends Fragment {
 
     private void setUI() {
         aggiungi = view.findViewById(R.id.aggiungi);
+        aggiungi2 = view.findViewById(R.id.aggiungi2);
         aggiungi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.sceltaProdottoFragment);
+            }
+        });
+        aggiungi2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Navigation.findNavController(view).navigate(R.id.sceltaProdottoFragment);
