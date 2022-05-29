@@ -8,9 +8,9 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/iconappgel"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/iconappgel"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyGel"
         android:usesCleartextTraffic="true"

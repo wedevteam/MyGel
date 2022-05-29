@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.CountDownTimer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -149,6 +150,16 @@ public class AssegnazioneNomeFragment extends Fragment {
                             Toast.makeText(getContext(),     "Errore durante il trasferimento dati", Toast.LENGTH_SHORT).show();
                         } else {
                            chiudiConnessioneDevice();
+                            /*CountDownTimer countDownTimer = new CountDownTimer(10000,1000) {
+                                @Override
+                                public void onTick(long l) {
+                                    String x = "1";
+                                }
+                                @Override
+                                public void onFinish() {
+                                    inviaDatiServer();
+                                }
+                            }.start();*/
                         }
                     }
                 },
@@ -189,7 +200,17 @@ public class AssegnazioneNomeFragment extends Fragment {
                             // CODICE ERRATO
                             Toast.makeText(getContext(),     "Errore durante il trasferimento dati", Toast.LENGTH_SHORT).show();
                         } else {
-                            inviaDatiServer();
+                            CountDownTimer countDownTimer = new CountDownTimer(10000,1000) {
+                                @Override
+                                public void onTick(long l) {
+                                    invia.setText("Connessione in corso.....");invia.setEnabled(false);
+                                }
+                                @Override
+                                public void onFinish() {
+                                    inviaDatiServer();
+                                }
+                            }.start();
+
                         }
                     }
 
@@ -245,6 +266,7 @@ public class AssegnazioneNomeFragment extends Fragment {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError volleyError) {
+                        Toast.makeText(getActivity(), "Connessione internet inesistente", Toast.LENGTH_SHORT).show();
                         String t="v";
                         // TODO
                     }
