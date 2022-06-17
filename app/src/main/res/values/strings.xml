@@ -90,4 +90,11 @@
     <string name="allarmi">ALLARME</string>
     <string name="tornaindietro">Esci</string>
 
+    <string name="location_permission_title">Permesso di geolocalizzazione</string>
+    <string name="location_permission_message">Questa applicazione non usa la geolocalizzazione tuttavia è necessario concedere il permesso per connetersi ai dipositivi Gel.\nAttiva il permesso nel dispositivo  </string>
+
+    <string name="location_denied_title">Permesso di geolocalizzazione negato</string>
+    <string name="location_denied_message">Poichè il permesso di geolocalizzazione non è stato concesso, questa applicazione non è in grado di rilevare i dispositivi Gel</string>
+    <string name="pairing_request">Accoppiamento richiesto\n-> Esegui accoppiamento e ritenta la connessione</string>
+
 </resources>

@@ -42,7 +42,7 @@ public class SceltaProdottoFragment extends Fragment {
         attivaProdotto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.infoAttivazioneFragment);
+                Navigation.findNavController(view).navigate(R.id.infoAttivazione2Fragment);
             }
         });
     }

@@ -84,4 +84,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics'
     implementation 'com.google.firebase:firebase-messaging:23.0.5'
     implementation 'com.google.firebase:firebase-core:21.0.0'
+
+    // Permessi
+    implementation 'com.karumi:dexter:6.2.3'
 }

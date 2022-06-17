@@ -1,7 +1,12 @@
 package com.wedev.mygel;
 
+import android.Manifest;
+import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -63,6 +68,7 @@ public class InfoAttivazioneFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         this.view=view;
         setUI();
+
     }
     private void setUI() {
         impostazioni = view.findViewById(R.id.impostazioni);

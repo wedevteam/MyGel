@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/APP 2022/MyGel/app/src/main/res/drawable-v24/indicatoriwlecomeactive.xml" value="0.3619791666666667" />
         <entry key="..\:/APP 2022/MyGel/app/src/main/res/drawable-v24/indicatoriwlecomeinactive.xml" value="0.3619791666666667" />
+        <entry key="..\:/APP 2022/MyGel/app/src/main/res/drawable/ic_alert.xml" value="0.3619791666666667" />
         <entry key="..\:/APP 2022/MyGel/app/src/main/res/drawable/indicatoriwlecome.xml" value="0.3619791666666667" />
         <entry key="..\:/APP 2022/MyGel/app/src/main/res/drawable/indicatoriwlecomeactive.xml" value="0.3619791666666667" />
         <entry key="..\:/APP 2022/MyGel/app/src/main/res/drawable/indicatoriwlecomeinactive.xml" value="0.3619791666666667" />
@@ -27,6 +28,7 @@
         <entry key="..\:/APP 2022/MyGel/app/src/main/res/layout/fragment_comandi.xml" value="0.28125" />
         <entry key="..\:/APP 2022/MyGel/app/src/main/res/layout/fragment_home.xml" value="0.317481884057971" />
         <entry key="..\:/APP 2022/MyGel/app/src/main/res/layout/fragment_info_attivazione.xml" value="0.317481884057971" />
+        <entry key="..\:/APP 2022/MyGel/app/src/main/res/layout/fragment_info_attivazione2.xml" value="0.32971014492753625" />
         <entry key="..\:/APP 2022/MyGel/app/src/main/res/layout/fragment_messaggi.xml" value="0.22552083333333334" />
         <entry key="..\:/APP 2022/MyGel/app/src/main/res/layout/fragment_profilo.xml" value="0.271286231884058" />
         <entry key="..\:/APP 2022/MyGel/app/src/main/res/layout/fragment_recupera_password.xml" value="0.32563405797101447" />
