@@ -15,7 +15,7 @@ import com.wedev.mygel.database.tables.TMain;
 
 @Database(entities = {TMain.class, TFirstTime.class},version = 1,exportSchema = false)
 public abstract class DB extends RoomDatabase {
-    private static final String DB_NAME = "oppov1_db";
+    private static final String DB_NAME = "oppov2_db";
 
     private static DB instance;
 

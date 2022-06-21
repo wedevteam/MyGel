@@ -243,11 +243,8 @@ public class ComandiFragment extends Fragment {
     }
 
     public void showErrBase(String titolo, String messaggio){
-        MaterialAlertDialogBuilder dialogo=  new MaterialAlertDialogBuilder(getContext(),R.style.AlertDialogTheme)
-                .setTitle(titolo)
-                .setMessage(messaggio)
-                .setNeutralButton("Ok",null);
-        dialogo.show();
+
+        Toast.makeText(getContext(), messaggio, Toast.LENGTH_SHORT).show();
     }
 
     private void hideSoftKeyBoard() {

@@ -6,7 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import com.wedev.mygel.database.DB;
 import com.wedev.mygel.database.tables.TFirstTime;
+import com.wedev.mygel.database.tables.TMain;
 import com.wedev.mygel.functions.ManageBaseData;
 import com.wedev.mygel.functions.RestFunctions;
 
@@ -17,6 +19,10 @@ public class StartActivity extends AppCompatActivity {
 
     // BASE
     ManageBaseData _baseData ;
+
+    //DB
+    TMain mainData;
+    DB db;
 
     // VAR
     Intent intent;
@@ -36,14 +42,19 @@ public class StartActivity extends AppCompatActivity {
             }
 
         }else
-            goMain();
+            if (_baseData.getMainData()==null)
+                goSignIn();
+            else
+                goMain();
     }
+
     // Legge dati da Server
     private void goMain() {
         Intent intent = new Intent(StartActivity.this,MainActivity.class);
         startActivity(intent);
         finish();
     }
+
 
     // Set firsttimedata e va a welcome
     private void goWelcome(){

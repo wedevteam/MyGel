@@ -337,6 +337,7 @@ public class InfoAttivazione2Fragment extends Fragment {
                 risultati.setText(risultati.getText().toString()+"\n"+deviceName+" "+ deviceHardwareAddress+"\n");
             }
         }
+        scanState = ScanState.DISCOVERY;
         bluetoothAdapter.startDiscovery();
     }
 }

@@ -275,11 +275,8 @@ public class GraficiActivity  extends GraficiBase implements SeekBar.OnSeekBarCh
     }
 
     public void showErrBase(String titolo, String messaggio){
-        MaterialAlertDialogBuilder dialogo=  new MaterialAlertDialogBuilder(this,R.style.AlertDialogTheme)
-                .setTitle(titolo)
-                .setMessage(messaggio)
-                .setNeutralButton("Ok",null);
-        dialogo.show();
+
+        Toast.makeText(this, messaggio, Toast.LENGTH_SHORT).show();
     }
 
     private void hideSoftKeyBoard() {

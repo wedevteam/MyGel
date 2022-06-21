@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.MyGel" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.MyGel" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">#d7dfe4</item>
         <item name="colorPrimaryVariant">#5b6871</item>
@@ -73,6 +73,7 @@
         <item name="android:fillColor">#000000</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">20sp</item>
+        <item name="textFillColor">#ffffff</item>
     </style>
 
     <style name="TextAppearance" parent="TextAppearance.AppCompat">
@@ -83,5 +84,24 @@
     <style name="TitleTextStyle" parent="MaterialAlertDialog.MaterialComponents.Title.Text">
         <item name="android:textColor">#000000</item>
         <item name="android:textSize">20sp</item>
+    </style>
+    <style name="Theme.BTSCAN" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimaryVariant">@color/black</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <item name="textFillColor">@color/black</item>
+        <item name="height">200sp</item>
+        <item name="maxHeight">200sp</item>
+
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/white</item>
+        <item name="colorSecondaryVariant">@color/white</item>
+        <item name="colorOnSecondary">@color/white</item>
+
+        <item name="backgroundColor">@color/white</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
     </style>
 </resources>

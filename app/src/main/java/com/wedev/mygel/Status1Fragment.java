@@ -18,6 +18,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
@@ -265,11 +266,7 @@ public class Status1Fragment extends Fragment {
     }
 
     public void showErrBase(String titolo, String messaggio){
-        MaterialAlertDialogBuilder dialogo=  new MaterialAlertDialogBuilder(getContext(),R.style.AlertDialogTheme)
-                .setTitle(titolo)
-                .setMessage(messaggio)
-                .setNeutralButton("Ok",null);
-        dialogo.show();
+        Toast.makeText(getContext(), messaggio, Toast.LENGTH_SHORT).show();
     }
 
     private void hideSoftKeyBoard() {

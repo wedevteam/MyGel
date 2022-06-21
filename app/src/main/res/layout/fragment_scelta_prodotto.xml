@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,113 +7,212 @@
     android:orientation="vertical"
     tools:context=".fragments.AccediFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardmessaggio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="16sp"
+        android:layout_margin="16sp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        app:cardCornerRadius="16sp"
+        android:elevation="12sp"
+        >
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:background="@color/white"
+           android:layout_height="match_parent">
+
+           <TextView
+               android:id="@+id/titmessaggio"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginStart="8sp"
+               android:background="@color/white"
+               android:layout_marginTop="8sp"
+               android:layout_marginEnd="8sp"
+               android:layout_marginBottom="8sp"
+               android:text="@string/permessi"
+               android:textColor="@color/black"
+               android:textSize="20sp"
+               android:textStyle="bold">
+
+           </TextView>
+
+           <TextView
+               android:id="@+id/descrmessaggio"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_below="@+id/titmessaggio"
+               android:layout_marginStart="16sp"
+               android:layout_marginTop="8sp"
+               android:layout_marginEnd="16sp"
+               android:background="@color/white"
+               android:text="@string/l_app_ha_bisogno_che_vengano_concessi_i_permessi_richiesti_per_poter_correttamente_connetersi_e_gestire_gli_apparati_gel"
+               android:textColor="@color/black"
+               android:textSize="16sp">
+
+           </TextView>
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:background="@color/white"
+               android:layout_below="@+id/descrmessaggio"
+               android:orientation="horizontal"
+               android:weightSum="2">
+
+               <com.google.android.material.button.MaterialButton
+                   android:id="@+id/esci"
+                   android:layout_width="0sp"
+                   android:layout_height="60sp"
+                   android:layout_above="@+id/registratiskip"
+                   android:layout_marginStart="10sp"
+                   android:layout_marginTop="50sp"
+                   android:layout_marginEnd="10sp"
+                   android:layout_weight="1"
+                   android:backgroundTint="#f2f2f2"
+                   android:text="ESCI"
+                   android:textColor="@color/black"
+                   android:textSize="14sp"
+                   app:cornerRadius="8sp" />
+
+               <com.google.android.material.button.MaterialButton
+                   android:id="@+id/impostazioni"
+                   android:layout_width="0sp"
+                   android:layout_height="60sp"
+                   android:layout_above="@+id/registratiskip"
+                   android:layout_marginStart="10sp"
+                   android:layout_marginTop="50sp"
+                   android:layout_marginEnd="10sp"
+                   android:layout_weight="1"
+                   android:backgroundTint="#7e8b93"
+                   android:text="Impostazioni"
+                   android:textColor="@color/white"
+                   android:textSize="14sp"
+                   app:cornerRadius="8sp" />
+           </LinearLayout>
+       </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/titolo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/attivazione1"
+        android:textAlignment="center"
+        android:textColor="@color/text"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+
+    <LinearLayout
+        android:layout_below="@+id/titolo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:id="@+id/sottotitolo"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1sp"
+            android:layout_marginBottom="10sp"
+            android:background="@color/black"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="24sp"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:text="@string/seleziona_il_prodotto_da_aggiungere"
+            android:layout_marginBottom="20sp"/>
+
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/avviaricerca"
+        android:layout_width="match_parent"
+        android:layout_height="60sp"
+        android:layout_below="@+id/sottotitolo"
+        android:layout_marginStart="20sp"
+        android:layout_marginEnd="20sp"
+        android:layout_marginBottom="20sp"
+        android:backgroundTint="@color/button"
+        android:text="@string/avvia_ricerca"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:cornerRadius="4sp" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@+id/avviaricerca"
+        android:layout_margin="20sp"
+        android:id="@+id/elencoBT"
+        android:layout_marginBottom="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="180sp">
+
+    </androidx.recyclerview.widget.RecyclerView>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:backgroundTint="@color/white"
+        android:id="@+id/layoutreti"
+        android:background="@color/white"
+        >
         <TextView
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="@color/text"
-            android:textAlignment="center"
-            android:layout_marginTop="16sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/attivazione1" />
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:background="@color/white"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:id="@+id/titoloreti"
+            android:text="Scegli la rete a cui si deve connettere l'apparato GEL"
+            />
+
+        <EditText
+            android:layout_below="@+id/titoloreti"
+            android:text=""
+            android:id="@+id/pw"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Inserisci Password della rete scelta"
+            android:textColorHint="@color/black"
+            android:inputType="text"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/inviapw"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_below="@+id/pw"
+            android:layout_marginStart="20sp"
+            android:layout_marginEnd="20sp"
+            android:layout_marginBottom="20sp"
+            android:backgroundTint="@color/button"
+            android:text="INVIA DATI AL DISPOSITIVO GEL"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:cornerRadius="4sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_below="@+id/titoloreti"
+            android:layout_margin="20sp"
+            android:id="@+id/elencoSSID"
+            android:layout_marginBottom="20sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </androidx.recyclerview.widget.RecyclerView>
     </RelativeLayout>
 
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/scrollablespace">
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20sp"
-            android:orientation="vertical">
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1sp"
-                android:layout_marginBottom="10sp"
-                android:background="@color/black"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="24sp"
-                android:textStyle="bold"
-                android:textSize="20sp"
-                android:textColor="@color/black"
-                android:textAlignment="center"
-                android:text="Seleziona il prodotto da attivare"
-                android:layout_marginBottom="20sp"/>
-
-            <RadioGroup
-                android:id="@+id/radioGroup"
-                android:checkedButton="@+id/radio_button_1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <RadioButton
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:id="@+id/radio_button_1"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="Acqua click"/>
-
-                <RadioButton
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:visibility="gone"
-                    android:id="@+id/radio_button_2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="CAT o installatore"/>
-                <RadioButton
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:visibility="gone"
-                    android:id="@+id/radio_button_3"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="Distributore"/>
-                <RadioButton
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:visibility="gone"
-                    android:id="@+id/radio_button_4"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="Progettista"/>
-            </RadioGroup>
-
-
-
-
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/attiva"
-                android:layout_width="match_parent"
-                android:layout_height="60sp"
-                android:layout_above="@+id/registratiskip"
-                android:layout_marginStart="20sp"
-                android:layout_marginTop="20sp"
-                android:layout_marginEnd="20sp"
-                android:layout_marginBottom="20sp"
-                android:backgroundTint="@color/button"
-                android:text="@string/attiva"
-                android:textColor="@color/white"
-                android:textSize="14sp"
-                app:cornerRadius="4sp" />
-
-
-
-
-        </LinearLayout>
-    </ScrollView>
-</LinearLayout>
+</RelativeLayout>

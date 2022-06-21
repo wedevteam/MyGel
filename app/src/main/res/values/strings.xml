@@ -27,10 +27,10 @@
     <string name="indirizzo">Indirizzo</string>
     <string name="citta">Città</string>
     <string name="registra">registrati</string>
-    <string name="descrapp">La prima app per il controllo remoto degli apparati</string>
+    <string name="descrapp">Controlla i tuoi apparati Gel\ndovunque tu sia</string>
     <string name="aggiungiprodotto">aggiungi prodotto</string>
-    <string name="vedidettagli">vedi dettagli</string>
-    <string name="attivazione1">Attivazione prodotto 1 di 3</string>
+    <string name="vedidettagli">gestisci</string>
+    <string name="attivazione1">Aggiungi prodotto</string>
     <string name="attivazione2">Attivazione prodotto 2 di 3</string>
     <string name="attivazione3">Attivazione prodotto 3 di 3</string>
     <string name="attiva">attiva prodotto</string>
@@ -96,5 +96,12 @@
     <string name="location_denied_title">Permesso di geolocalizzazione negato</string>
     <string name="location_denied_message">Poichè il permesso di geolocalizzazione non è stato concesso, questa applicazione non è in grado di rilevare i dispositivi Gel</string>
     <string name="pairing_request">Accoppiamento richiesto\n-> Esegui accoppiamento e ritenta la connessione</string>
+    <string name="seleziona_il_prodotto_da_aggiungere">Avvia la ricerca dei prodotti disponibili</string>
+    <string name="avvia_ricerca">avvia ricerca</string>
+    <string name="l_app_ha_bisogno_che_vengano_concessi_i_permessi_richiesti_per_poter_correttamente_connetersi_e_gestire_gli_apparati_gel">L\'app ha bisogno che vengano concessi i permessi richiesti per poter correttamente connetersi e gestire gli apparati GEL.</string>
+    <string name="permessi">Permessi</string>
+    <string name="scegli_questa_rete">scegli questa rete</string>
+    <string name="inserisci_password_della_rete_scelta">Inserisci Password della rete scelta</string>
+    <string name="invia_dati_al_dispositivo_gel">INVIA DATI AL DISPOSITIVO GEL</string>
 
 </resources>

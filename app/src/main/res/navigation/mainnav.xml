@@ -37,6 +37,9 @@
         <action
             android:id="@+id/action_sceltaProdottoFragment_to_infoAttivazione2Fragment"
             app:destination="@id/infoAttivazione2Fragment" />
+        <action
+            android:id="@+id/action_sceltaProdottoFragment_to_connessioneFragment"
+            app:destination="@id/connessioneFragment" />
     </fragment>
     <fragment
         android:id="@+id/infoAttivazioneFragment"
@@ -110,4 +113,8 @@
         android:id="@+id/infoAttivazione2Fragment"
         android:name="com.wedev.mygel.InfoAttivazione2Fragment"
         android:label="InfoAttivazione2Fragment" />
+    <fragment
+        android:id="@+id/connessioneFragment"
+        android:name="com.wedev.mygel.ConnessioneFragment"
+        android:label="ConnessioneFragment" />
 </navigation>

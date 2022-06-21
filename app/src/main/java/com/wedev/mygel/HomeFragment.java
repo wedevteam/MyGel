@@ -9,7 +9,6 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -21,30 +20,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.RetryPolicy;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.button.MaterialButton;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
-import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.wedev.mygel.adapters.ProdottiAdapter;
-import com.wedev.mygel.adapters.SSIDSAdapter;
 import com.wedev.mygel.database.DB;
 import com.wedev.mygel.database.tables.TMain;
 import com.wedev.mygel.functions.ManageBaseData;
@@ -132,7 +122,7 @@ public class HomeFragment extends Fragment {
     }
 
     private void setUI() {
-        aggiungi = view.findViewById(R.id.aggiungi);
+        aggiungi = view.findViewById(R.id.avviaricerca);
         aggiungi2 = view.findViewById(R.id.aggiungi2);
         aggiungi.setOnClickListener(new View.OnClickListener() {
             @Override
