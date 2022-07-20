@@ -26,7 +26,7 @@ public class StartActivity extends AppCompatActivity {
 
     // VAR
     Intent intent;
-    boolean welcomeActivitiy = false;
+    boolean welcomeActivitiy = true; // se non si desidera mettere false
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

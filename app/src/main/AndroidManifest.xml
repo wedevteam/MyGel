@@ -4,6 +4,7 @@
     package="com.wedev.mygel">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -11,7 +12,6 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
-
 
     <application
         android:icon="@drawable/iconappgel"
@@ -22,8 +22,18 @@
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup">
         <activity
-            android:name=".MessaggiActivity"
+            android:name=".AllarmiActivity"
             android:exported="false" />
+        <activity
+            android:name=".MessaggiActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity">
+            <intent-filter>
+                <action android:name="OPEN_ACTIVITY" />
+                <!-- Add this OPEN_ACTIVITY string into your data payload while sending the notification from server side. -->
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".GraficiBase"
             android:exported="false" />
@@ -71,7 +81,6 @@
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" /> <!-- Broadasting -->
-
         <service
             android:name=".functions.FirebaseService"
             android:exported="false">
@@ -83,13 +92,11 @@
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@drawable/ic_alert" />
-
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_channel_id"
             android:value="@string/default_notification_channel_id" />
 
         <service android:name=".functions.SerialService" />
-
     </application>
 
 </manifest>

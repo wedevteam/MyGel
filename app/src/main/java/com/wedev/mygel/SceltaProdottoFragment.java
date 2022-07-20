@@ -473,8 +473,9 @@ public class SceltaProdottoFragment extends Fragment  {
             @Override
             public void onPermissionGranted(PermissionGrantedResponse permissionGrantedResponse) {
                 isAuthorized=true;
+                avviaRicerca.setVisibility(View.VISIBLE);
                 if (isRequestFromAvvia){
-                    avviaRicerca.setVisibility(View.VISIBLE);
+
                     isRequestFromAvvia=false;
                     startDiscover();
                     CountDownTimer countDownTimer = new CountDownTimer(12000,1000) {

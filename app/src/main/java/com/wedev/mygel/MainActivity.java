@@ -43,6 +43,15 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setMessaggi();
+        if (getIntent().getExtras() != null) {
+            for (String key : getIntent().getExtras().keySet())
+            {
+                String value = getIntent().getExtras().getString(key);
+                if (key.equals("click_action")) {
+                   startActivity(new Intent(MainActivity.this, MessaggiActivity.class));
+                }
+            }
+        }
     }
     private void setMessaggi() {
        String token = returnMeFCMtoken();

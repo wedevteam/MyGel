@@ -3,6 +3,7 @@ package com.wedev.mygel;
 import static android.content.Context.INPUT_METHOD_SERVICE;
 
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -15,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.DefaultRetryPolicy;
@@ -156,7 +158,7 @@ public class ComandiFragment extends Fragment {
             comando += nomeDevice;
             comando += "#";
             comando += s;
-            comando += ":\"https://server.com/fw-latest.bin\";MD5HASH:eef279d38586b29c37e1fc37971bb972#";
+            comando += ":\"https://ym-dev.com/fwgel/AClick.bin\";MD5HASH:eef279d38586b29c37e1fc37971bb972#";
         }
         inviaComando();
     }
@@ -224,6 +226,7 @@ public class ComandiFragment extends Fragment {
             }else{
                 int numero = s.getInt("user_devices_num");
                 try {
+                    showError("","Comando inviato al dispositivo");
                     Toast.makeText(getContext(), "Comando inviato al dispositivo", Toast.LENGTH_SHORT).show();
                 }catch (Exception e){
                     e.printStackTrace();
@@ -238,10 +241,15 @@ public class ComandiFragment extends Fragment {
         //5
     }
     private void showError(String error_code, String message) {
-        hideSoftKeyBoard();
-        showErrBase(" "+error_code,message);
+        Toast toast = Toast.makeText(getContext(), message, Toast.LENGTH_LONG);
+        View view = toast.getView();
+        view.setBackgroundResource(R.drawable.tmessage);
+        TextView text = (TextView) view.findViewById(android.R.id.message);
+        /*Here you can do anything with above textview like text.setTextColor(Color.parseColor("#000000"));*/
+        text.setTextColor(Color.parseColor("#ff0000"));
+        text.setBackgroundColor(Color.parseColor("#00FF00"));
+        toast.show();
     }
-
     public void showErrBase(String titolo, String messaggio){
 
         Toast.makeText(getContext(), messaggio, Toast.LENGTH_SHORT).show();

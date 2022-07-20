@@ -3,7 +3,9 @@ package com.wedev.mygel.fragments;
 import static android.content.Context.INPUT_METHOD_SERVICE;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -18,6 +20,7 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
@@ -58,6 +61,7 @@ public class AccediFragment extends Fragment {
     View view;
     NavController navController;
 
+    Context ctx;
     //DB
     TMain mainData;
     DB db;
@@ -81,6 +85,7 @@ public class AccediFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        ctx = getContext();
         // Inizializza DB
         setDB();
         // Legge DB
@@ -88,6 +93,7 @@ public class AccediFragment extends Fragment {
 
         if (DEBUG){
             db.tMainDao().deleteAll();
+            db.tFirstTimeDao().deleteAll();
         }else{
             if (mainData!=null){
                 SignInActivity signin = (SignInActivity)getActivity();
@@ -136,6 +142,8 @@ public class AccediFragment extends Fragment {
             public void onClick(View view) {
                 if (verify())
                     accediServer();
+                else
+                    showError("","Inserisci correttamente i dati");
             }
         });
         email = view.findViewById(R.id.email);
@@ -231,16 +239,17 @@ public class AccediFragment extends Fragment {
         //5
     }
     private void showError(String error_code, String message) {
-        hideSoftKeyBoard();
-        showErrBase(" "+error_code,message);
+        Toast toast = Toast.makeText(ctx, message, Toast.LENGTH_LONG);
+        View view = toast.getView();
+        view.setBackgroundResource(R.drawable.tmessage);
+        TextView text = (TextView) view.findViewById(android.R.id.message);
+        /*Here you can do anything with above textview like text.setTextColor(Color.parseColor("#000000"));*/
+        text.setTextColor(Color.parseColor("#ff0000"));
+        toast.show();
     }
 
     public void showErrBase(String titolo, String messaggio){
-        MaterialAlertDialogBuilder dialogo=  new MaterialAlertDialogBuilder(getContext(),R.style.AlertDialogTheme)
-                .setTitle(titolo)
-                .setMessage(messaggio)
-                .setNeutralButton("Ok",null);
-        dialogo.show();
+        Toast.makeText(ctx, messaggio, Toast.LENGTH_SHORT).show();
     }
 
     private void hideSoftKeyBoard() {
