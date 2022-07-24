@@ -7,7 +7,7 @@
     <string name="stringawelcome3">Stringa 3\nsu due righe</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="accedi">ACCEDI</string>
+    <string name="accedi">Accedi</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="entra">Entra</string>
@@ -103,5 +103,38 @@
     <string name="scegli_questa_rete">scegli questa rete</string>
     <string name="inserisci_password_della_rete_scelta">Inserisci Password della rete scelta</string>
     <string name="invia_dati_al_dispositivo_gel">INVIA DATI AL DISPOSITIVO GEL</string>
+    <string name="gel_enjoy_your_home_water">enjoy your home water</string>
+    <string name="gel_la_comodit_e_la_sicurezza_di_avere_i_tuoi_dispositivi_sotto_controllo">La comodità e la sicurezza di avere i tuoi dispositivi sotto controllo</string>
+    <string name="gel_sono_un_privato">Sono un privato</string>
+    <string name="gel_voglio_conoscere_i_prodotti_gel_e_configurare_i_miei_nuovi_acquisti">Voglio conoscere i prodotti GEL e configurare i miei nuovi acquisti</string>
+    <string name="gel_accedi">accedi</string>
+    <string name="gel_sono_un_cat_o_un_installatore">Sono un CAT o un Installatore</string>
+    <string name="gel_voglio_consultare_i_prodotti_gel_e_accedere_facilmente_alle_schede_prodotto">Voglio consultare i prodotti GEL e accedere facilmente alle schede prodotto</string>
+    <string name="gel_sono_un_distributore">Sono un distributore</string>
+    <string name="gel_voglio_consultare_i_prodotti_gel_e_scoprire_le_promozioni_in_corso">Voglio consultare i prodotti GEL e scoprire le promozioni in corso</string>
+    <string name="gel_sono_un_progettista">Sono un progettista</string>
+    <string name="voglio_consultare_i_prodotti_gel_e_congel_figurare_facilmente_un_nuovo_impianto_idrico">Voglio consultare i prodotti GEL e configurare facilmente un nuovo impianto idrico</string>
+    <string name="gel_telefono_cellulare">Telefono cellulare</string>
+    <string name="password2">Ripeti password*</string>
+    <string name="gel_campi_obbligatori">*CAMPI OBBLIGATORI</string>
+    <string name="gel_controlla_la_tua_email">controlla la tua email</string>
+    <string name="gel_abbiamo_inviato_via_email_un_codice_per_l_autenticazione_copia_il_codice_e_inseriscilo_qui_sotto">Abbiamo inviato via email un codice per l’autenticazione. \nCopia il codice e inseriscilo qui sotto.</string>
+    <string name="gel_verifica">VERIFICA</string>
+    <string name="gel_homemenu">Home</string>
+    <string name="gel_aggiungi_nuovo_prodottomenu">Aggiungi nuovo prodotto</string>
+    <string name="gel_sfoglia_guidacquamenu">Sfoglia Guidacqua</string>
+    <string name="gel_guarda_i_videotutorialmenu">Guarda i videotutorial</string>
+    <string name="gel_vai_ai_dispositivi_connessimenu">Vai ai dispositivi connessi</string>
+    <string name="gel_i_miei_datimenu">I miei dati</string>
+    <string name="menuopen">open</string>
+    <string name="menuclose">close</string>
+    <string name="gel_ciaotesto">per effettuare la connessione alla rete wi-fi del tuo nuovo dispositivo prima di premere su CONNETTI NUOVO PRODOTTO, attiva il bluetooth e il WiFi sul telefono, scollega e ricollega la presa del dispositivo dalla corrente e completa la procedura entro 5 minuti</string>
+    <string name="gel_ciao">Ciao</string>
+    <string name="gel_rivista">i prodotti Gel, sfoglia il catalogo guidacqua</string>
+    <string name="gel_seleziona_il_prodotto_da_connettere_in_3_semplici_step">Seleziona il prodotto da connettere in 3 semplici step</string>
+    <string name="seleziona_il_prodotto_ntra_quelli_trovati">SELEZIONA IL PRODOTTO \nTRA QUELLI TROVATI</string>
+    <string name="seleziona_rete_wifi_2_3">SELEZIONA RETE WIFI (2/3)</string>
+    <string name="vai_ai_video_tutorial">VAI AI VIDEO TUTORIAL</string>
+    <string name="acquaclick_4_0">AcquaClick 4.0</string>
 
 </resources>

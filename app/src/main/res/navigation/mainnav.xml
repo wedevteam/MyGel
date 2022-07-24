@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_homeFragment_to_profiloFragment"
             app:destination="@id/profiloFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_videoTFragment"
+            app:destination="@id/videoTFragment" />
     </fragment>
     <fragment
         android:id="@+id/sceltaProdottoFragment"
@@ -117,4 +120,9 @@
         android:id="@+id/connessioneFragment"
         android:name="com.wedev.mygel.ConnessioneFragment"
         android:label="ConnessioneFragment" />
+    <fragment
+        android:id="@+id/videoTFragment"
+        android:name="com.wedev.mygel.VideoTFragment"
+        android:label="fragment_video_t"
+        tools:layout="@layout/fragment_video_t" />
 </navigation>

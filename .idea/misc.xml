@@ -43,10 +43,42 @@
         <entry key="..\:/APP 2022/MyGel/app/src/main/res/layout/fragment_scelta_profilo.xml" value="0.22395833333333334" />
         <entry key="..\:/APP 2022/MyGel/app/src/main/res/layout/fragment_status1.xml" value="0.317481884057971" />
         <entry key="..\:/APP 2022/MyGel/app/src/main/res/layout/fragment_status2.xml" value="0.276268115942029" />
+        <entry key="..\:/SVILUPPO/ANDROID/MyGel/app/src/main/res/drawable/ic_gelapppayoff.xml" value="0.37864583333333335" />
+        <entry key="..\:/SVILUPPO/ANDROID/MyGel/app/src/main/res/drawable/ic_gelbrand.xml" value="0.37864583333333335" />
+        <entry key="..\:/SVILUPPO/ANDROID/MyGel/app/src/main/res/drawable/ic_gelbrandapp.xml" value="0.37864583333333335" />
+        <entry key="..\:/SVILUPPO/ANDROID/MyGel/app/src/main/res/drawable/ic_gelpayoffapp.xml" value="0.37864583333333335" />
+        <entry key="..\:/SVILUPPO/ANDROID/MyGel/app/src/main/res/drawable/ic_gelrivista.xml" value="0.37864583333333335" />
+        <entry key="..\:/SVILUPPO/ANDROID/MyGel/app/src/main/res/drawable/zoomout.xml" value="0.37864583333333335" />
+        <entry key="..\:/SVILUPPO/ANDROID/MyGel/app/src/main/res/layout-v26/activity_start.xml" value="0.3625" />
+        <entry key="..\:/SVILUPPO/ANDROID/MyGel/app/src/main/res/layout-v26/splashscreen.xml" value="0.20260416666666667" />
+        <entry key="..\:/SVILUPPO/ANDROID/MyGel/app/src/main/res/layout/activity_cat.xml" value="0.20416666666666666" />
+        <entry key="..\:/SVILUPPO/ANDROID/MyGel/app/src/main/res/layout/activity_grafici.xml" value="0.22760416666666666" />
+        <entry key="..\:/SVILUPPO/ANDROID/MyGel/app/src/main/res/layout/activity_main.xml" value="0.28854166666666664" />
+        <entry key="..\:/SVILUPPO/ANDROID/MyGel/app/src/main/res/layout/activity_sign_in.xml" value="0.2578125" />
+        <entry key="..\:/SVILUPPO/ANDROID/MyGel/app/src/main/res/layout/activity_start.xml" value="0.3625" />
+        <entry key="..\:/SVILUPPO/ANDROID/MyGel/app/src/main/res/layout/activity_video.xml" value="0.24739583333333334" />
+        <entry key="..\:/SVILUPPO/ANDROID/MyGel/app/src/main/res/layout/activity_welcome.xml" value="0.22760416666666666" />
+        <entry key="..\:/SVILUPPO/ANDROID/MyGel/app/src/main/res/layout/contentprodotti.xml" value="0.26145833333333335" />
+        <entry key="..\:/SVILUPPO/ANDROID/MyGel/app/src/main/res/layout/contentprodottidisponibili.xml" value="0.26145833333333335" />
+        <entry key="..\:/SVILUPPO/ANDROID/MyGel/app/src/main/res/layout/contentssid.xml" value="0.26979166666666665" />
+        <entry key="..\:/SVILUPPO/ANDROID/MyGel/app/src/main/res/layout/fragment_accedi.xml" value="0.2578125" />
+        <entry key="..\:/SVILUPPO/ANDROID/MyGel/app/src/main/res/layout/fragment_assegnazione_nome.xml" value="0.22760416666666666" />
+        <entry key="..\:/SVILUPPO/ANDROID/MyGel/app/src/main/res/layout/fragment_attivazione.xml" value="0.26979166666666665" />
+        <entry key="..\:/SVILUPPO/ANDROID/MyGel/app/src/main/res/layout/fragment_comandi.xml" value="0.17708333333333334" />
+        <entry key="..\:/SVILUPPO/ANDROID/MyGel/app/src/main/res/layout/fragment_connessione.xml" value="0.20260416666666667" />
+        <entry key="..\:/SVILUPPO/ANDROID/MyGel/app/src/main/res/layout/fragment_home.xml" value="0.3578125" />
+        <entry key="..\:/SVILUPPO/ANDROID/MyGel/app/src/main/res/layout/fragment_info_attivazione.xml" value="0.22760416666666666" />
+        <entry key="..\:/SVILUPPO/ANDROID/MyGel/app/src/main/res/layout/fragment_info_attivazione2.xml" value="0.22760416666666666" />
+        <entry key="..\:/SVILUPPO/ANDROID/MyGel/app/src/main/res/layout/fragment_profilo.xml" value="0.2578125" />
+        <entry key="..\:/SVILUPPO/ANDROID/MyGel/app/src/main/res/layout/fragment_registra.xml" value="0.2578125" />
+        <entry key="..\:/SVILUPPO/ANDROID/MyGel/app/src/main/res/layout/fragment_scelta_prodotto.xml" value="0.26145833333333335" />
+        <entry key="..\:/SVILUPPO/ANDROID/MyGel/app/src/main/res/layout/fragment_scelta_profilo.xml" value="0.2578125" />
+        <entry key="..\:/SVILUPPO/ANDROID/MyGel/app/src/main/res/layout/fragment_video_t.xml" value="0.2484375" />
+        <entry key="..\:/SVILUPPO/ANDROID/MyGel/app/src/main/res/menu/mainmenu.xml" value="0.3578125" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

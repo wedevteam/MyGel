@@ -43,7 +43,7 @@ public class SceltaProfiloFragment extends Fragment {
         setUI();
     }
     private void setUI() {
-        scegli = view.findViewById(R.id.scegli);
+        scegli = view.findViewById(R.id.accedip);
         scegli.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

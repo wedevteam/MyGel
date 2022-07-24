@@ -3,14 +3,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/white"
-        app:cardCornerRadius="16sp">
+        android:backgroundTint="@color/white">
         <LinearLayout
             android:layout_width="match_parent"
             android:orientation="vertical"
@@ -22,13 +22,13 @@
                 android:textColor="#000000"
                 android:background="@color/white"
                 android:textStyle="bold"
-                android:layout_marginEnd="16sp"
-                android:layout_marginStart="16sp"
-                android:layout_marginTop="16sp"
+                android:layout_marginEnd="2sp"
+                android:layout_marginStart="2sp"
+                android:layout_marginTop="4sp"
                 android:layout_marginBottom="10sp"
                 android:id="@+id/nome"
                 android:textAlignment="center"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 android:text=""/>
             <LinearLayout
                 android:weightSum="1"
@@ -48,11 +48,17 @@
                     android:layout_marginEnd="10sp"
                     android:backgroundTint="#7e8b93"
                     android:text="@string/vedidettagli"
+                    android:visibility="gone"
                     android:textColor="@color/white"
-                    android:textSize="14sp"
-                    app:cornerRadius="8sp" />
+                    android:textSize="16sp" />
             </LinearLayout>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1sp"
+                android:background="@color/black"
+                android:layout_marginEnd="20sp"
+                android:layout_marginStart="20sp"/>
         </LinearLayout>
 
 

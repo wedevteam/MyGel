@@ -2,11 +2,13 @@ package com.wedev.mygel.fragments;
 
 import static android.content.Context.INPUT_METHOD_SERVICE;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
@@ -17,6 +19,7 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +33,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textfield.TextInputEditText;
+import com.wedev.mygel.MainActivity;
 import com.wedev.mygel.R;
 import com.wedev.mygel.database.DB;
 import com.wedev.mygel.database.tables.TMain;
@@ -38,6 +42,7 @@ import com.wedev.mygel.functions.RestParams;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -46,13 +51,19 @@ import java.util.Map;
 
 public class RegistraFragment extends Fragment {
 
+    TextView messaggio;
     Button registra;
-    TextInputEditText password;
-    TextInputEditText citta;
-    TextInputEditText indirizzo;
-    TextInputEditText cognome;
-    TextInputEditText nome;
-    TextInputEditText email;
+    Button verifica;
+    EditText password;
+    EditText password2;
+    EditText codice;
+    EditText tel;
+    EditText citta;
+    EditText indirizzo;
+    EditText cognome;
+    EditText nome;
+    EditText email;
+    CardView verificaCard;
     View view;
 
     //DB
@@ -100,12 +111,17 @@ public class RegistraFragment extends Fragment {
         rf = new RestFunctions();
     }
     private void setUI() {
+        messaggio = view.findViewById(R.id.messaggio);
         password = view.findViewById(R.id.password);
+        password2 = view.findViewById(R.id.password2);
+        tel = view.findViewById(R.id.tel);
         citta = view.findViewById(R.id.citta);
         indirizzo = view.findViewById(R.id.indirizzo);
         cognome = view.findViewById(R.id.cognome);
         nome = view.findViewById(R.id.nome);
         email = view.findViewById(R.id.email);
+        codice = view.findViewById(R.id.codice);
+        verificaCard = view.findViewById(R.id.cardverifica);
         registra = view.findViewById(R.id.registra);
         registra.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -114,6 +130,26 @@ public class RegistraFragment extends Fragment {
                     registraServer();
             }
         });
+        verifica = view.findViewById(R.id.verifica);
+        verifica.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (verifica.getText().toString().equals("CHIUDI")){
+                   startActivity(new Intent(getContext(), MainActivity.class));
+                }else{
+                    if (verifyCodice()){
+                        messaggio.setText("Registrazione \n" +
+                                "conclusa con successo");
+                        codice.setVisibility(View.GONE);
+                        verifica.setText("CHIUDI");
+                    }
+                }
+
+            }
+        });
+    }
+    private boolean verifyCodice() {
+        return codice.getText().toString().equals("1111");
     }
     private boolean verify() {
         if (!emailIsValid()){
@@ -133,16 +169,19 @@ public class RegistraFragment extends Fragment {
             cognome.requestFocus();
             return false;
         }
-        if (citta.getText().toString().isEmpty()){
-            citta.requestFocus();
+
+
+        if (password.getText().toString().isEmpty()){
+            password.requestFocus();
             return false;
         }
-        if (indirizzo.getText().toString().isEmpty()){
-            indirizzo.requestFocus();
+        if (password2.getText().toString().isEmpty()){
+            password2.requestFocus();
             return false;
         }
 
-        if (password.getText().toString().isEmpty()){
+        if (!password.getText().toString().equals(password2.getText().toString())){
+            Toast.makeText(getContext(), "La password non coincidono", Toast.LENGTH_SHORT).show();
             password.requestFocus();
             return false;
         }
@@ -229,7 +268,9 @@ public class RegistraFragment extends Fragment {
                     mainData.setToken(tokenFromWeb);
                     db.tMainDao().insert(mainData);
                 }
-                Navigation.findNavController(view).navigate(R.id.registrazioneEffettuataFragment);
+               verifica.setVisibility(View.VISIBLE);
+                verificaCard.setVisibility(View.VISIBLE);
+                registra.setVisibility(View.GONE);
             }
         } catch (JSONException e) {
             registra.setEnabled(true);

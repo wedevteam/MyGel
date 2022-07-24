@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:background="@color/gelgrigiodialogo"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
@@ -10,18 +11,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/white"
-        android:layout_margin="10sp"
-        app:cardCornerRadius="16sp">
+        android:background="@color/gelgrigiodialogo"
+        android:layout_margin="10sp">
         <LinearLayout
             android:layout_width="match_parent"
             android:orientation="vertical"
-            android:background="@color/white"
+            android:background="@color/gelgrigiodialogo"
             android:layout_height="wrap_content">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#000000"
-                android:background="@color/white"
+                android:textColor="@color/white"
+                android:background="@color/gelgrigiodialogo"
                 android:textStyle="bold"
                 android:layout_marginEnd="16sp"
                 android:layout_marginStart="16sp"
@@ -44,6 +45,7 @@
                     android:layout_weight="1"
                     android:layout_width="0sp"
                     android:layout_height="60sp"
+                    android:visibility="gone"
                     android:layout_marginStart="10sp"
                     android:layout_marginEnd="10sp"
                     android:backgroundTint="#7e8b93"

@@ -14,7 +14,7 @@
     <ImageView
         android:layout_width="200sp"
         android:layout_height="wrap_content"
-        android:src="@drawable/brand"
+        android:src="@drawable/ic_gelbrand"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40sp">
     </ImageView>

@@ -68,7 +68,8 @@ public class HomeFragment extends Fragment {
     // BASE
     ManageBaseData _baseData ;
 
-    Button aggiungi;
+    public static Button aggiungi;
+    Button nuovo;
     Button aggiungi2;
 
     ProdottiAdapter prodottiAdapter;
@@ -122,20 +123,28 @@ public class HomeFragment extends Fragment {
     }
 
     private void setUI() {
+        nuovo = view.findViewById(R.id.nuovo);
+        nuovo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.sceltaProdottoFragment);
+            }
+        });
+
         aggiungi = view.findViewById(R.id.avviaricerca);
-        aggiungi2 = view.findViewById(R.id.aggiungi2);
+        //aggiungi2 = view.findViewById(R.id.aggiungi2);
         aggiungi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Navigation.findNavController(view).navigate(R.id.sceltaProdottoFragment);
             }
         });
-        aggiungi2.setOnClickListener(new View.OnClickListener() {
+       /* aggiungi2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Navigation.findNavController(view).navigate(R.id.sceltaProdottoFragment);
             }
-        });
+        });*/
         elencoProdottiRecycler = view.findViewById(R.id.elencoProdotti);
         layoutnoprodotti = view.findViewById(R.id.layoutnoprodotti);
 

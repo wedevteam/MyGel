@@ -180,6 +180,7 @@ public class SceltaProdottoFragment extends Fragment  {
         setUI();
         setPermessi();
         setRecycler();
+        avviaRicerca.performClick();
     }
     private void setRecycler() {
         btAdapter = new BTAdapter(view.getContext(), listaRifDevices);
@@ -244,6 +245,7 @@ public class SceltaProdottoFragment extends Fragment  {
                             @Override
                             public void onFinish() {
                                 bluetoothAdapter.cancelDiscovery();
+                                avviaRicerca.setVisibility(View.GONE);
                                 avviaRicerca.setText("avvia ricerca");
                             }
                         }.start();
@@ -574,7 +576,7 @@ public class SceltaProdottoFragment extends Fragment  {
             @SuppressLint("UseCompatLoadingForColorStateLists")
             void setData(ModelDevices boardingItem, int position){
 
-                if (boardingItem.getNome().startsWith("GEL_A")){
+                if (boardingItem.getNome().startsWith("GEL_ABAB")){
                     nome.setText(String.format("%s \n(Acqua Click)", boardingItem.getNome()));
                 }else{
                     nome.setText(boardingItem.getNome());
@@ -609,7 +611,18 @@ public class SceltaProdottoFragment extends Fragment  {
                 itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                       // fragment.nomerete.setText(nome.getText().toString());
+                        if ( azione.getText().toString().equals("ACCOPPIA"))
+                            accoppia(boardingItem.getNome());
+                        if ( azione.getText().toString().equals("ATTIVA")){
+                            try {
+                                bluetoothAdapter.cancelDiscovery();
+                            }catch (Exception e){
+                                e.printStackTrace();
+                            }
+                            nomedaattivare = boardingItem.getNome();
+                            attiva(boardingItem.getNome());
+
+                        }
                     }
                 });
             }

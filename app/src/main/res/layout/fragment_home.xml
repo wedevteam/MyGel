@@ -2,114 +2,215 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".fragments.AccediFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <RelativeLayout
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16sp"
-            android:text="@string/app_name"
-            android:textAlignment="center"
-            android:textColor="@color/text"
-            android:textSize="40sp"
-            android:textStyle="bold" />
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/aggiungi2"
-            android:layout_alignParentEnd="true"
-            android:layout_width="40sp"
-            android:layout_height="40sp"
-            android:layout_marginStart="20sp"
-            android:layout_marginTop="20sp"
-            android:layout_marginEnd="20sp"
-            android:layout_marginBottom="20sp"
-            android:backgroundTint="@color/button"
-            android:text="+"
-            android:textColor="@color/white"
-            android:textSize="14sp"
-            app:cornerRadius="4sp" />
-    </RelativeLayout>
-
-    <TextView
-        android:id="@+id/titolo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20sp"
-        android:layout_marginEnd="20sp"
-        android:text="@string/descrapp"
-        android:textAlignment="center"
-        android:textColor="@color/text"
-        android:textSize="20sp" />
     <ScrollView
-        android:layout_below="@+id/titolo"
+        android:background="@color/white"
         android:layout_above="@+id/avviaricerca"
+        android:visibility="visible"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:id="@+id/scrollablespace">
 
         <LinearLayout
+            android:background="@color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20sp"
             android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="200sp"
+                android:background="@color/white">
+
+                <ImageView
+                    android:id="@+id/immaginetipo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100sp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20sp"
+                    android:layout_above="@+id/nuovo"
+                    android:background="@color/white"
+                    android:src="@drawable/ic_gelprivato" />
+
+                <TextView
+                    android:id="@+id/ciaotesto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20sp"
+                    android:layout_toStartOf="@id/immaginetipo"
+                    android:background="@color/white"
+                    android:text="@string/gel_ciaotesto"
+                    android:layout_above="@+id/nuovo"
+                    android:textAlignment="textEnd"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/ciaotesto"
+                    android:layout_toStartOf="@id/immaginetipo"
+                    android:background="@color/white"
+                    android:text="@string/gel_ciao"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/rossot"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/nuovo"
+                    android:layout_width="match_parent"
+                    android:layout_height="50sp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="20sp"
+                    android:layout_marginEnd="20sp"
+                    android:layout_marginBottom="20sp"
+                    android:backgroundTint="@color/gelverdechiaro"
+                    android:text="@string/aggiungiprodotto"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:visibility="visible"
+                    app:cornerRadius="12sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="200sp"
+                android:background="@color/white">
+
+                <ImageView
+                    android:id="@+id/immaginerivista"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/sfoglia"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20sp"
+                    android:background="@color/white"
+                    android:src="@drawable/gelrivista" />
+
+                <TextView
+                    android:id="@+id/rivistatesto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20sp"
+                    android:layout_marginStart="20sp"
+                    android:layout_toStartOf="@id/immaginerivista"
+                    android:background="@color/white"
+                    android:text="@string/gel_rivista"
+                    android:layout_above="@+id/sfoglia"
+                    android:textAlignment="textEnd"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/rivistatesto"
+                    android:layout_toStartOf="@id/immaginerivista"
+                    android:background="@color/white"
+                    android:text="Sfoglia"
+                    android:layout_marginEnd="20sp"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/rossot"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/sfoglia"
+                    android:layout_width="match_parent"
+                    android:visibility="visible"
+                    android:layout_height="50sp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="20sp"
+                    android:layout_marginEnd="20sp"
+                    android:layout_marginBottom="20sp"
+                    android:backgroundTint="@color/gelverdechiaro"
+                    android:text="SFOGLIA GUIDACQUA"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:cornerRadius="12sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="200sp"
+                android:background="@color/white">
+
+                <ImageView
+                    android:id="@+id/immaginevideo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/guarda"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20sp"
+                    android:background="@color/white"
+                    android:src="@drawable/gelvideo" />
+
+                <TextView
+                    android:id="@+id/videotesto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20sp"
+                    android:layout_toStartOf="@id/immaginevideo"
+                    android:background="@color/white"
+                    android:layout_marginEnd="10sp"
+                    android:text="la tecnologia dentro i nostri prodotti"
+                    android:layout_above="@+id/guarda"
+                    android:textAlignment="textEnd"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/videotesto"
+                    android:layout_toStartOf="@id/immaginevideo"
+                    android:background="@color/white"
+                    android:text="Guarda"
+                    android:layout_marginEnd="10sp"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/rossot"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/guarda"
+                    android:layout_width="match_parent"
+                    android:layout_height="50sp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="20sp"
+                    android:layout_marginEnd="20sp"
+                    android:layout_marginBottom="20sp"
+                    android:backgroundTint="@color/gelverdechiaro"
+                    android:text="@string/vai_ai_video_tutorial"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:visibility="visible"
+                    app:cornerRadius="12sp" />
+            </RelativeLayout>
             <LinearLayout
+                android:background="@color/white"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="20sp"
                 android:id="@+id/layoutnoprodotti"
                 android:orientation="vertical">
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1sp"
-                    android:layout_marginBottom="10sp"
-                    android:background="@color/black"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:textSize="30sp"
-                    android:textColor="@color/black"
-                    android:textAlignment="center"
-                    android:text="I tuoi prodotti GEL"
-                    android:layout_marginBottom="20sp"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="20sp"
-                    android:textColor="@color/black"
-                    android:textAlignment="center"
-                    android:text="Non hai ancora prodotti GEL attivati."
-                    android:layout_marginBottom="20sp"/>
-
-
-
-
-
-
-
-
 
 
             </LinearLayout>
 
             <LinearLayout
+                android:background="@color/white"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/layoutrecycler"
                 android:orientation="vertical">
                 <androidx.recyclerview.widget.RecyclerView
+                    android:background="@color/white"
                     android:layout_margin="20sp"
                     android:id="@+id/elencoProdotti"
                     android:layout_width="match_parent"
@@ -125,6 +226,7 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/avviaricerca"
         android:layout_width="match_parent"
+        android:visibility="gone"
         android:layout_height="60sp"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="20sp"

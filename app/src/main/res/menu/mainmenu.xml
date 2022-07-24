@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/homemenu"
+        android:title="@string/gel_homemenu"
+        android:icon="@drawable/ic_homemenu"/>
+    <item android:id="@+id/aggiungimenu"
+        android:title="@string/gel_aggiungi_nuovo_prodottomenu"
+        android:icon="@drawable/ic_aggiungimenu"/>
+    <item android:id="@+id/sfogliamenu"
+        android:title="@string/gel_sfoglia_guidacquamenu"
+        android:icon="@drawable/ic_sfogliamenu"/>
+    <item android:id="@+id/homeguarda"
+        android:title="@string/gel_guarda_i_videotutorialmenu"
+        android:icon="@drawable/ic_guarda"/>
+    <item android:id="@+id/vaimenu"
+        android:title="@string/gel_vai_ai_dispositivi_connessimenu"
+        android:icon="@drawable/ic_vaimenu"/>
+    <item android:id="@+id/datimenu"
+        android:title="@string/gel_i_miei_datimenu"
+        android:icon="@drawable/ic_datimenu"/>
+</menu>

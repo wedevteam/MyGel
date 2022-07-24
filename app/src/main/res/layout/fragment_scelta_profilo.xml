@@ -5,113 +5,286 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:background="@color/white"
     tools:context=".fragments.AccediFragment">
 
     <!-- TODO: Update blank fragment layout -->
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="@color/text"
-            android:textAlignment="center"
-            android:layout_marginTop="16sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/registrazione1" />
-    </RelativeLayout>
 
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingBottom="30sp"
         android:id="@+id/scrollablespace">
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/white"
             android:layout_margin="20sp"
             android:orientation="vertical">
 
+            <RelativeLayout
+
+                android:layout_marginTop="10sp"
+                android:layout_width="match_parent"
+                android:background="@color/white"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_toStartOf="@id/immaginep"
+                    android:orientation="vertical"
+                    android:background="@color/white">
+                    <TextView
+                        android:id="@+id/tipop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:text="@string/gel_sono_un_privato"
+                        android:textColor="@color/gelprivato"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:id="@+id/sottotipop"
+                        android:background="@color/white"
+                        android:text="@string/gel_voglio_conoscere_i_prodotti_gel_e_configurare_i_miei_nuovi_acquisti"/>
+
+                </LinearLayout>
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/accedip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="8sp"
+                    android:layout_marginTop="20sp"
+                    android:layout_marginBottom="20sp"
+                    android:backgroundTint="@color/gelverdechiaro"
+                    android:text="@string/accedi"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:cornerRadius="4sp" />
+
+                <ImageView
+                    android:id="@+id/immaginep"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_toStartOf="@+id/accedip"
+                    android:src="@drawable/ic_gelprivato" />
+
+            </RelativeLayout>
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1sp"
                 android:layout_marginBottom="10sp"
                 android:background="@color/black"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="20sp"
-                android:textStyle="bold"
-                android:textSize="20sp"
-                android:textColor="@color/black"
-                android:textAlignment="center"
-                android:text="Seleziona il tuo profilo"
-                android:layout_marginBottom="20sp"/>
+            <RelativeLayout
 
-            <RadioGroup
-                android:id="@+id/radioGroup"
-                android:checkedButton="@+id/radio_button_1"
+                android:layout_marginTop="10sp"
                 android:layout_width="match_parent"
+                android:background="@color/white"
                 android:layout_height="wrap_content">
-                <RadioButton
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_toStartOf="@id/immaginei"
+                    android:orientation="vertical"
+                    android:background="@color/white">
+                    <TextView
+                        android:id="@+id/tipoi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:text="@string/gel_sono_un_cat_o_un_installatore"
+                        android:textColor="@color/gelinst"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/sottotipoi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:text="@string/gel_voglio_consultare_i_prodotti_gel_e_accedere_facilmente_alle_schede_prodotto"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/accedii"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="8sp"
+                    android:layout_marginTop="20sp"
+                    android:layout_marginBottom="20sp"
+                    android:backgroundTint="@color/gelverdechiaro"
+                    android:text="@string/gel_accedi"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:cornerRadius="4sp" />
+
+                <ImageView
+                    android:id="@+id/immaginei"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_toStartOf="@+id/accedii"
+                    android:src="@drawable/ic_gelidraulico" />
+
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1sp"
+                android:layout_marginBottom="10sp"
+                android:background="@color/black"/>
+            <RelativeLayout
+
+                android:layout_marginTop="10sp"
+                android:layout_width="match_parent"
+                android:background="@color/white"
+                android:layout_height="wrap_content"><LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_toStartOf="@id/immagined"
+                android:orientation="vertical"
+                android:background="@color/white">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    android:textColor="@color/geldistr"
+                    android:textStyle="bold"
+                    android:id="@+id/tipod"
+                    android:background="@color/white"
+                    android:text="@string/gel_sono_un_distributore"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
                     android:textColor="@color/black"
                     android:textStyle="bold"
-                    android:id="@+id/radio_button_1"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="@string/privato"/>
+                    android:id="@+id/sottotipod"
+                    android:background="@color/white"
+                    android:text="@string/gel_voglio_consultare_i_prodotti_gel_e_scoprire_le_promozioni_in_corso"/>
 
-                <RadioButton
-                    android:textColor="@color/button"
-                    android:textStyle="bold"
-                    android:enabled="false"
-                    android:id="@+id/radio_button_2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="@string/cat_o_installatore"/>
-                <RadioButton
-                    android:textColor="@color/button"
-                    android:textStyle="bold"
-                    android:enabled="false"
-                    android:id="@+id/radio_button_3"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="@string/distributore"/>
-                <RadioButton
-                    android:textColor="@color/button"
-                    android:textStyle="bold"
-                    android:enabled="false"
-                    android:id="@+id/radio_button_4"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="@string/progettista"/>
-            </RadioGroup>
+            </LinearLayout>
 
 
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/accedid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="8sp"
+                    android:layout_marginTop="20sp"
+                    android:layout_marginBottom="20sp"
+                    android:backgroundTint="@color/gelverdechiaro"
+                    android:text="@string/gel_accedi"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:cornerRadius="4sp" />
 
+                <ImageView
+                    android:id="@+id/immagined"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@+id/accedid"
+                    android:layout_alignParentBottom="true"
+                    android:src="@drawable/ic_geldistributore" />
 
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/scegli"
+            </RelativeLayout>
+            <View
                 android:layout_width="match_parent"
-                android:layout_height="60sp"
-                android:layout_marginStart="20sp"
-                android:layout_marginTop="20sp"
-                android:layout_marginEnd="20sp"
-                android:layout_marginBottom="20sp"
-                android:backgroundTint="@color/button"
-                android:text="@string/continua"
-                android:textColor="@color/white"
-                android:textSize="14sp"
-                app:cornerRadius="4sp" />
+                android:layout_height="1sp"
+                android:layout_marginBottom="10sp"
+                android:background="@color/black"/>
+            <RelativeLayout
+                android:layout_marginTop="10sp"
+                android:layout_width="match_parent"
+                android:background="@color/white"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_toStartOf="@id/immaginet"
+                    android:orientation="vertical"
+                    android:background="@color/white">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="22sp"
+                        android:textColor="@color/gelprog"
+                        android:textStyle="bold"
+                        android:layout_below="@+id/sottotipot"
+                        android:id="@+id/tipot"
+                        android:background="@color/white"
+                        android:text="@string/gel_sono_un_progettista"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:layout_toStartOf="@+id/immaginet"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:id="@+id/sottotipot"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/white"
+                        android:text="@string/voglio_consultare_i_prodotti_gel_e_congel_figurare_facilmente_un_nuovo_impianto_idrico"/>
 
 
+                </LinearLayout>
 
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/accedit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="8sp"
+                    android:layout_marginTop="20sp"
+                    android:layout_marginBottom="20sp"
+                    android:backgroundTint="@color/gelverdechiaro"
+                    android:text="@string/accedi"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:cornerRadius="4sp" />
+
+                <ImageView
+                    android:id="@+id/immaginet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_toStartOf="@+id/accedit"
+                    android:src="@drawable/ic_gelprogettista" />
+
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1sp"
+                android:layout_marginBottom="60sp"
+                android:background="@color/black"/>
 
         </LinearLayout>
     </ScrollView>

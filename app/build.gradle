@@ -8,10 +8,10 @@ android {
 
     defaultConfig {
         applicationId "com.wedev.mygel"
-        minSdk 24
+        minSdk 26
         targetSdk 31
-        versionCode 9
-        versionName "1.9"
+        versionCode 10
+        versionName "2.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -30,31 +30,31 @@ android {
 
 dependencies {
 
-    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'androidx.appcompat:appcompat:1.4.2'
 
     // material
-    implementation 'com.google.android.material:material:1.6.0'
+    implementation 'com.google.android.material:material:1.6.1'
     
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 
     // Rooms
     implementation 'androidx.room:room-runtime:2.4.2'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'androidx.fragment:fragment:1.4.1'
+    implementation 'androidx.fragment:fragment:1.5.0'
     annotationProcessor 'androidx.room:room-compiler:2.4.2'
 
     // Navigation
-    implementation 'androidx.navigation:navigation-fragment:2.4.2'
-    implementation 'androidx.navigation:navigation-ui:2.4.2'
+    implementation 'androidx.navigation:navigation-fragment:2.5.0'
+    implementation 'androidx.navigation:navigation-ui:2.5.0'
 
     // Navigation: Feature module Support
-    implementation 'androidx.navigation:navigation-dynamic-features-fragment:2.4.2'
+    implementation 'androidx.navigation:navigation-dynamic-features-fragment:2.5.0'
 
     // Navigation: Testing Navigation
-    androidTestImplementation 'androidx.navigation:navigation-testing:2.4.2'
+    androidTestImplementation 'androidx.navigation:navigation-testing:2.5.0'
 
     // Navigation: Jetpack Compose Integration
-    implementation 'androidx.navigation:navigation-compose:2.5.0-rc01'
+    implementation 'androidx.navigation:navigation-compose:2.5.0'
 
     // Glide
     implementation 'com.github.bumptech.glide:glide:4.12.0'
@@ -82,8 +82,8 @@ dependencies {
     // firebase
     implementation platform('com.google.firebase:firebase-bom:30.0.1')
     implementation 'com.google.firebase:firebase-analytics'
-    implementation 'com.google.firebase:firebase-messaging:23.0.5'
-    implementation 'com.google.firebase:firebase-core:21.0.0'
+    implementation 'com.google.firebase:firebase-messaging:23.0.6'
+    implementation 'com.google.firebase:firebase-core:21.1.0'
 
     // Permessi
     implementation 'com.karumi:dexter:6.2.3'

@@ -5,15 +5,43 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/white"
     tools:context=".StartActivity">
 
-    <ImageView
-        android:layout_width="200sp"
-        android:layout_height="150sp"
-        android:src="@drawable/brand"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="40sp">
-    </ImageView>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/brand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="20sp"
+            android:layout_marginTop="20sp"
+            android:layout_marginEnd="20sp"
+            android:layout_marginBottom="20sp"
+            android:src="@drawable/ic_gelbrand" />
+
+        <TextView
+            android:id="@+id/mainpayoff"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24sp"
+            android:layout_marginTop="24sp"
+            android:layout_marginEnd="24sp"
+            android:layout_marginBottom="24sp"
+            android:layout_toStartOf="@+id/brand"
+            android:autoSizeMaxTextSize="100sp"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeTextType="uniform"
+            android:background="@color/white"
+            android:maxLines="1"
+            android:text="@string/gel_enjoy_your_home_water"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
 
 
     <fragment

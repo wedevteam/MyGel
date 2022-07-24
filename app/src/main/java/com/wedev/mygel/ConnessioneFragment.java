@@ -79,6 +79,11 @@ public class ConnessioneFragment extends Fragment implements ServiceConnection, 
     private SerialService service;
 
     private TextView receiveText;
+    private TextView fase;
+    private View linea2;
+    private Button connetti;
+    private TextView nomerete;
+    private EditText codice;
     private TextView sendText;
     private TextUtil.HexWatcher hexWatcher;
 
@@ -204,6 +209,10 @@ public class ConnessioneFragment extends Fragment implements ServiceConnection, 
         // Legge DB
         mainData = getMainData();
         View view = inflater.inflate(R.layout.fragment_connessione, container, false);
+        codice = view.findViewById(R.id.codice);                          // TextView performance decreases with number of spans
+        linea2 = view.findViewById(R.id.linea2);                          // TextView performance decreases with number of spans
+        fase = view.findViewById(R.id.fase);                          // TextView performance decreases with number of spans
+        nomerete = view.findViewById(R.id.nomerete);                          // TextView performance decreases with number of spans
         receiveText = view.findViewById(R.id.receive_text);                          // TextView performance decreases with number of spans
         receiveText.setTextColor(getResources().getColor(R.color.black)); // set as default color to reduce number of spans
         receiveText.setMovementMethod(ScrollingMovementMethod.getInstance());
@@ -217,6 +226,28 @@ public class ConnessioneFragment extends Fragment implements ServiceConnection, 
         View sendBtn = view.findViewById(R.id.send_btn);
         sendBtn.setOnClickListener(v -> send(sendText.getText().toString()));
         listaReti = view.findViewById(R.id.layoutreti);
+        connetti = view.findViewById(R.id.connetti);
+        connetti.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (connetti.getText().toString().equals("VAI AL DISPOSITIVO")) {
+                    Navigation.findNavController(view).navigate(R.id.homeFragment);
+                } else {
+                    // /cmdSSID=xxx:PASS=xxx&
+                    if (codice.getText().toString().isEmpty()) {
+                        Toast.makeText(ctx, "Inserire password", Toast.LENGTH_SHORT).show();
+                    } else {
+                        String cmd = "/cmdSSID=" + titoloreti.getText().toString() + ":PASS=" + codice.getText().toString() + "&";
+                        String x = "1";
+                        cmdState = CMDPW;
+                        jsonString = "";
+                        send(cmd);
+                    }
+
+                }
+
+            }
+        });
         inviapw = view.findViewById(R.id.inviapw);
         inviapw.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -328,6 +359,20 @@ public class ConnessioneFragment extends Fragment implements ServiceConnection, 
         }
     }
     private void parseJson(String dataX) {
+        Log.w("RESULT ===============>>>>>>",dataX);
+
+        try{
+            if (dataX.equals("PAIRING OK")){
+                initialStart2=false;
+                jsonString="";
+                cmdState = CMDHELLO;
+                send("/hello");
+                return;
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+
         if (cmdState == CMDPW){
             boolean pwAccettata = verifyCMD(dataX);
             if (!pwAccettata){
@@ -446,7 +491,19 @@ public class ConnessioneFragment extends Fragment implements ServiceConnection, 
             if (!success){
                 showError(s.getString("error_code"),s.getString("message"));
             }else{
-                Navigation.findNavController(view).navigate(R.id.attivazioneFragment);
+                fase.setText("OTTIMO!");
+                nomerete.setText("Connessione alla rete Wi-Fi\n" +
+                        "avvenuta correttamente.\n" +
+                        "ora potrai supervisionare\n" +
+                        "il dispositivo con l’App\n" +
+                        "e ricevere le notifiche");
+                nomerete.setVisibility(View.VISIBLE);
+                connetti.setText("VAI AL DISPOSITIVO");
+                codice.setVisibility(View.GONE);
+                //  pw.setVisibility(View.VISIBLE);
+                linea2.setVisibility(View.GONE);
+                titolo.setVisibility(View.VISIBLE);
+
             }
         } catch (JSONException e) {
             e.printStackTrace();
@@ -606,7 +663,17 @@ public class ConnessioneFragment extends Fragment implements ServiceConnection, 
                 itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        // fragment.nomerete.setText(nome.getText().toString());
+                        fase.setText("INSERISCI LA PASSWORD (3/3)");
+                        nomerete.setText(boardingItem);
+                        nomerete.setVisibility(View.VISIBLE);
+                        connetti.setVisibility(View.VISIBLE);
+                        codice.setVisibility(View.VISIBLE);
+                      //  pw.setVisibility(View.VISIBLE);
+                        setElencoRetiInvisible();
+                        titoloreti.setText(boardingItem);
+                        linea2.setVisibility(View.VISIBLE);
+                        titolo.setVisibility(View.VISIBLE);
+                     //   inviapw.setVisibility(View.VISIBLE);
                     }
                 });
             }
